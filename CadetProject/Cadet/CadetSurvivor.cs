@@ -300,7 +300,7 @@ namespace CadetMod.Cadet
 
                 resetCooldownTimerOnUse = false,
                 fullRestockOnAssign = true,
-                dontAllowPastMaxStocks = true,
+                dontAllowPastMaxStocks = false,
                 beginSkillCooldownOnSkillEnd = false,
                 mustKeyPress = true,
 
@@ -520,7 +520,6 @@ namespace CadetMod.Cadet
             HUD.onHudTargetChangedGlobal += HUDSetup;
             //On.RoR2.CharacterBody.RecalculateStats += CharacterBody_RecalculateStats;
             //On.RoR2.UI.LoadoutPanelController.Rebuild += LoadoutPanelController_Rebuild;
-            On.RoR2.GenericSkill.SetBonusStockFromBody += new On.RoR2.GenericSkill.hook_SetBonusStockFromBody(GenericSkill_SetBonusStockFromBody);
             //On.RoR2.HealthComponent.TakeDamage += new On.RoR2.HealthComponent.hook_TakeDamage(HealthComponent_TakeDamage);
             if (CadetPlugin.emotesInstalled) Emotes();
         }
@@ -533,14 +532,6 @@ namespace CadetMod.Cadet
                 var skele = CadetAssets.mainAssetBundle.LoadAsset<GameObject>("cadet_emoteskeleton");
                 CustomEmotesAPI.ImportArmature(CadetSurvivor.characterPrefab, skele);
             };
-        }
-        public void GenericSkill_SetBonusStockFromBody(On.RoR2.GenericSkill.orig_SetBonusStockFromBody orig, GenericSkill self, int newBonusStockFromBody)
-        {
-            if (self.skillDef.dontAllowPastMaxStocks && self.skillDef.skillNameToken == CadetSurvivor.CADET_PREFIX + "SECONDARY_THROWGUN_NAME")
-            {
-                return;
-            }
-            else orig.Invoke(self, newBonusStockFromBody);
         }
         private static void LoadoutPanelController_Rebuild(On.RoR2.UI.LoadoutPanelController.orig_Rebuild orig, LoadoutPanelController self)
         {

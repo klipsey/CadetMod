@@ -10,7 +10,7 @@ namespace CadetMod.Cadet.SkillStates
 {
     public class FireEcho : BaseCadetSkillState
     {
-        private float damageCoefficient = 3f;
+        private float damageCoefficient = 3.5f;
         private bool hasFired2;
         public override void OnEnter()
         {

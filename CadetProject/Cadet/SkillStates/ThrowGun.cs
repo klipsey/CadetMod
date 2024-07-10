@@ -11,8 +11,7 @@ namespace CadetMod.Cadet.SkillStates
 {
     public class ThrowGun : GenericProjectileBaseState
     {
-        public static float baseDuration = 0.5f;
-        public static float baseDelayDuration = 0.1f * baseDuration;
+        public static float baseDelayDuration = 0.2f;
         public GameObject gun = CadetAssets.gunPrefab;
         public CadetController cadetController;
         public override void OnEnter()

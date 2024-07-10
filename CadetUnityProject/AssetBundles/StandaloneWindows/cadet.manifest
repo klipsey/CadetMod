@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1562576271
+CRC: 3480982686
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 48e22fa2848a41a5cbce9105b8f342c6
+    Hash: c9aafcd9f923c85fda3b2717bd7cd611
   TypeTreeHash:
     serializedVersion: 2
     Hash: 42d2694ece3e6464c0822cad42100938
@@ -118,7 +118,7 @@ Assets:
 - Assets/Cadet/Meshes/CadetBackpack.001.mesh
 - Assets/Cadet/Textures/CadetWeapon_emission.png
 - Assets/Cadet/HUD/WeaponChargeBar.prefab
-- Assets/Cadet/Icons/texScoutIcon.png
+- Assets/Cadet/Icons/texCadetIcon.png
 - Assets/Cadet/Materials/matCadet.mat
 - Assets/Cadet/Icons/texDefaultSkin.png
 - Assets/Cadet/VFX/Badass/TinyExplosion.prefab

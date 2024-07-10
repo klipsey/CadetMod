@@ -114,7 +114,7 @@ Material:
     m_Floats:
     - _BlueChannelBias: 0
     - _BlueChannelSmoothness: 0
-    - _BumpScale: 1
+    - _BumpScale: 0.25
     - _ColorsOn: 0
     - _Cull: 2
     - _Cutoff: 0.5
