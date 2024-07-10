@@ -11,7 +11,8 @@ namespace CadetMod.Cadet.SkillStates
 {
     public class ThrowGun : GenericProjectileBaseState
     {
-        public static float baseDelayDuration = 0.2f;
+        public static float baseDuration = 0.15f;
+        public static float baseDelayDuration = 0.1f * baseDuration;
         public GameObject gun = CadetAssets.gunPrefab;
         public CadetController cadetController;
         public override void OnEnter()
@@ -60,7 +61,7 @@ namespace CadetMod.Cadet.SkillStates
         {
             if (base.GetModelAnimator())
             {
-                base.PlayAnimation("Gesture, Override", "ThrowGun", "Throw.playbackRate", this.duration * 1.5f);
+                base.PlayAnimation("Gesture, Override", "ThrowGun", "Throw.playbackRate", 0.75f / attackSpeedStat);
             }
         }
     }
