@@ -11,6 +11,7 @@ namespace CadetMod.Cadet.SkillStates
     public class FireEcho : BaseCadetSkillState
     {
         private float damageCoefficient = 3.5f;
+        private float duration = 1.25f;
         private bool hasFired2;
         public override void OnEnter()
         {
@@ -19,20 +20,21 @@ namespace CadetMod.Cadet.SkillStates
 
             base.PlayAnimation("Gesture, Override", "Special");
 
-            Fire();
+            Util.PlaySound("sfx_driver_prep_nuke", base.gameObject);
         }
 
         public override void FixedUpdate()
         {
             base.FixedUpdate();
 
-            if(base.fixedAge > 0.25f && !hasFired2)
+            if(base.fixedAge > duration / 2f && !hasFired2)
             {
                 hasFired2 = true;
                 Fire();
             }
-            if(base.fixedAge >= 0.5f)
+            if(base.fixedAge >= duration)
             {
+                Fire();
                 outer.SetNextStateToMain();
             }
         }
@@ -40,13 +42,13 @@ namespace CadetMod.Cadet.SkillStates
         private void Fire()
         {
             FireProjectileInfo fireProjectileInfo = default(FireProjectileInfo);
-            fireProjectileInfo.crit = false;
+            fireProjectileInfo.crit = RollCrit();
             fireProjectileInfo.damage = characterBody.damage * damageCoefficient;
             fireProjectileInfo.damageColorIndex = DamageColorIndex.Default;
             fireProjectileInfo.damageTypeOverride = DamageType.SlowOnHit;
             fireProjectileInfo.owner = characterBody.gameObject;
-            fireProjectileInfo.position = characterBody.aimOrigin;
-            fireProjectileInfo.rotation = Quaternion.LookRotation(Vector3.up);
+            fireProjectileInfo.position = FindModelChild("Robo").position;
+            fireProjectileInfo.rotation = Quaternion.LookRotation(GetAimRay().direction);
             fireProjectileInfo.procChainMask = default(ProcChainMask);
             fireProjectileInfo.projectilePrefab = LegacyResourcesAPI.Load<GameObject>("Prefabs/Projectiles/EchoHunterProjectile");
             fireProjectileInfo.force = 400f;

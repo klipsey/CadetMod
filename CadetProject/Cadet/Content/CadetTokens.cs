@@ -51,7 +51,7 @@ namespace CadetMod.Cadet.Content
 
             #region Primary
             Language.Add(prefix + "PRIMARY_SMG_NAME", "Shoot");
-            Language.Add(prefix + "PRIMARY_SMG_DESCRIPTION", $"{Tokens.agilePrefix}. Fire a laser for <style=cIsDamage>{100f * CadetStaticValues.smgDamageCoefficient}% damage</style>. Requires a <style=cIsUtility>reload</style> after 20 bullets.");
+            Language.Add(prefix + "PRIMARY_SMG_DESCRIPTION", $"{Tokens.agilePrefix}. Fire a laser for <style=cIsDamage>{100f * CadetStaticValues.smgDamageCoefficient}% damage</style>. Requires a <style=cIsUtility>reload</style> after <style=cIsDamage>20</style> bullets.");
 
             #endregion
 
@@ -62,15 +62,15 @@ namespace CadetMod.Cadet.Content
 
             #region Utility 
             Language.Add(prefix + "UTILITY_ROLLOAD_NAME", "Roll");
-            Language.Add(prefix + "UTILITY_ROLLOAD_DESCRIPTION", $"Roll in a direction instantly reloading your gun.");
+            Language.Add(prefix + "UTILITY_ROLLOAD_DESCRIPTION", $"Roll in a direction instantly <style=cIsUtility>reloading</style> your gun.");
 
             Language.Add(prefix + "UTILITY_SLIDE_NAME", "Slide");
-            Language.Add(prefix + "UTILITY_SLIDE_DESCRIPTION", $"Slide in a direction instantly reloading your gun.");
+            Language.Add(prefix + "UTILITY_SLIDE_DESCRIPTION", $"Slide in a direction instantly <style=cIsUtility>reloading</style> your gun.");
             #endregion
 
             #region Special
             Language.Add(prefix + "SPECIAL_ECHO_NAME", "Echo");
-            Language.Add(prefix + "SPECIAL_ECHO_DESCRIPTION", $"Fabricate two drones that seek out nearby enemies dealing <style=cIsDamage>2x{100f * 3.5f}% damage</style>");
+            Language.Add(prefix + "SPECIAL_ECHO_DESCRIPTION", $"Fabricate <style=cIsDamage>two drones</style> that seek out nearby enemies dealing <style=cIsDamage>2x{100f * 3.5f}% damage</style>.");
             #endregion
 
             #region Achievements

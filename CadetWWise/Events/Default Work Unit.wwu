@@ -1367,6 +1367,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="sfx_driver_prep_nuke" ID="{0C11A8D4-EFFA-4852-A5F2-21627F975D7A}">
+					<ChildrenList>
+						<Action Name="" ID="{FDAA7D5C-AA70-4426-A37F-519C0C5698E1}" ShortID="555191822">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sfx_driver_prep_nuke" ID="{D8672E83-88B8-49FA-BC40-3CC09DEF4A47}" WorkUnitID="{FE3FA7C5-9E89-40FE-8C7C-97CE0994E519}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
