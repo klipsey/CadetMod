@@ -39,8 +39,6 @@ namespace CadetMod
         {
             instance = this;
 
-            NetworkingAPI.RegisterMessageType<Cadet.Components.SyncAmmo>();
-
             //easy to use logger
             Log.Init(Logger);
 

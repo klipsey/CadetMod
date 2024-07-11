@@ -6,6 +6,7 @@
 				<Property Name="AudioFilesImporter\Path" Type="string" Value="C:\Users\mario\Desktop\primary\"/>
 				<Property Name="Event Action List\{00AB1DA8-4D4C-428A-86E4-F601ECAB3859}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{04482D0B-0694-410D-B498-2D2DE64B7278}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{0C11A8D4-EFFA-4852-A5F2-21627F975D7A}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{1520DA25-D480-46E6-A977-7FFAAC02E08C}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{17AC377E-EAF1-42FA-98A8-C7D2CD4D0623}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{1947D3D5-B034-4ED5-AFED-3A6FCA301419}\x64_Expand States" Type="string" Value=""/>
@@ -78,7 +79,7 @@
 				<Property Name="MonitoringManager\GameObjectFilter\x64_GameObjectFilters" Type="string" Value=""/>
 				<Property Name="ProjectExplorer\FirstVisible_10_1" Type="string" Value="{4C96B38B-3DB4-40C7-91C9-665510E38993}"/>
 				<Property Name="ProjectExplorer\FirstVisible_11_1" Type="string" Value="{23EC2DE3-3ED8-4B82-AC99-92E25F2E4C6B}"/>
-				<Property Name="ProjectExplorer\FirstVisible_1_1" Type="string" Value="{2388DAEA-9775-46C6-A2ED-C5222A397756}"/>
+				<Property Name="ProjectExplorer\FirstVisible_1_1" Type="string" Value="{80384CB0-2393-4FB4-B3DE-3ED82E9709F0}"/>
 				<Property Name="ProjectExplorer\FirstVisible_3_1" Type="string" Value="{56F9D462-2896-44B9-94BF-D790FDAF68FE}"/>
 				<Property Name="ProjectExplorer\FirstVisible_4_1" Type="string" Value="{CB6175F1-6080-4A23-92EF-0807E304D0C1}"/>
 				<Property Name="ProjectExplorer\FirstVisible_6_1" Type="string" Value="{C98E673F-A24C-48A8-960F-10565FFE70A0}"/>

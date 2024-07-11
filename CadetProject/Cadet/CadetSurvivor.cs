@@ -250,7 +250,7 @@ namespace CadetMod.Cadet
                 interruptPriority = EntityStates.InterruptPriority.Skill,
 
                 baseRechargeInterval = 0f,
-                baseMaxStock = 20,
+                baseMaxStock = CadetStaticValues.baseMaxAmmo,
 
                 rechargeStock = 0,
                 requiredStock = 1,

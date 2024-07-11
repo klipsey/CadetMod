@@ -13,7 +13,7 @@ namespace CadetMod.Cadet.Components
 {
     public class CadetController : MonoBehaviour
     {
-        public bool atMaxAmmo => ammo >= maxAmmo;
+        public bool atMaxAmmo => skillLocator.primary.baseStock + characterBody.inventory.GetItemCount(RoR2Content.Items.SecondarySkillMagazine) == maxAmmo;
         private CharacterBody characterBody;
         private ModelSkinController skinController;
         private ChildLocator childLocator;
@@ -27,11 +27,8 @@ namespace CadetMod.Cadet.Components
         private GameObject[] bulletObjects;
         private int currentCasing;
         private int currentBullet;
-
-        public int ammo = 20;
-
-        public int maxAmmo = CadetStaticValues.baseMaxAmmo;
-
+        public int maxAmmo => skillLocator.primary.baseStock + characterBody.inventory.GetItemCount(RoR2Content.Items.SecondarySkillMagazine);
+        public int ammo => skillLocator.primary.stock;
         public Action onAmmoChange;
 
         private uint playID1;
@@ -54,22 +51,7 @@ namespace CadetMod.Cadet.Components
         }
         private void Start()
         {
-            ammo = maxAmmo;
             onAmmoChange?.Invoke();
-        }
-        public void Reload()
-        {
-            ammo = maxAmmo;
-
-            NetworkIdentity networkIdentity = base.gameObject.GetComponent<NetworkIdentity>();
-            if (!networkIdentity)
-            {
-                return;
-            }
-
-            new SyncAmmo(networkIdentity.netId, (uint)(this.ammo)).Send(R2API.Networking.NetworkDestination.Clients);
-
-            this.onAmmoChange?.Invoke();
         }
         private void InitModelsAndSkillDefs()
         {
@@ -155,8 +137,6 @@ namespace CadetMod.Cadet.Components
         }
         private void FixedUpdate()
         {
-            maxAmmo = CadetStaticValues.baseMaxAmmo + characterBody.inventory.GetItemCount(RoR2Content.Items.SecondarySkillMagazine);
-
             if(skillLocator.primary.maxStock != maxAmmo) 
             {
                 skillLocator.primaryBonusStockSkill.SetBonusStockFromBody(characterBody.inventory.GetItemCount(RoR2Content.Items.SecondarySkillMagazine));

@@ -59,7 +59,6 @@ namespace CadetMod.Cadet.SkillStates
             Util.PlaySound("sfx_driver_air_dodge", this.gameObject);
 
             GiveStock();
-            cadetController.Reload();
         }
         protected virtual Vector3 GetHopVector()
         {
