@@ -40,6 +40,7 @@ namespace CadetMod.Cadet.Components
         public float jamTimer;
 
         public bool gunThrown = false;
+        public bool mustReload = false;
         private void Awake()
         {
             this.characterBody = this.GetComponent<CharacterBody>();
@@ -160,6 +161,24 @@ namespace CadetMod.Cadet.Components
             if(skillLocator.primary.maxStock != maxAmmo) 
             {
                 skillLocator.primaryBonusStockSkill.SetBonusStockFromBody(characterBody.inventory.GetItemCount(RoR2Content.Items.SecondarySkillMagazine));
+            }
+
+            if(skillLocator.primary.skillDef.skillNameToken != CadetSurvivor.CADET_PREFIX + "PRIMARY_SMG_NAME")
+            {
+                if(skillLocator.primary.stock < ammo)
+                {
+                    ammo--;
+                }
+
+                if(skillLocator.primary.stock <= 0 && !mustReload)
+                {
+                    mustReload = true;
+                }
+                else if(skillLocator.primary.stock == maxAmmo && mustReload)
+                {
+                    mustReload = false;
+                    Reload();
+                }
             }
         }
 
