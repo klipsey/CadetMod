@@ -95,7 +95,6 @@ namespace CadetMod.Cadet.SkillStates
                     queryTriggerInteraction = QueryTriggerInteraction.UseGlobal,
                     hitEffectPrefab = EntityStates.Commando.CommandoWeapon.FirePistol2.hitEffectPrefab,
                 };
-                cadetController.ammo--;
                 cadetController.onAmmoChange?.Invoke();
                 bulletAttack.Fire();
             }

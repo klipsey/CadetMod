@@ -18,7 +18,6 @@ namespace CadetMod.Cadet.SkillStates
             cadetController = GetComponent<CadetController>();
             base.OnEnter();
             GiveStock();
-            cadetController.Reload();
             PlayCrossfade("Fullbody, Override", "Slide", 0.1f);
         }
         public override void FixedUpdate()

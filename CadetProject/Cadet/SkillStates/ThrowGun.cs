@@ -42,7 +42,6 @@ namespace CadetMod.Cadet.SkillStates
                 aimRay.direction = Util.ApplySpread(aimRay.direction, 0f, 0f, 1f, 1f, 0f, this.projectilePitchBonus);
                 ProjectileManager.instance.FireProjectile(gun, aimRay.origin, Util.QuaternionSafeLookRotation(aimRay.direction), this.gameObject, this.damageStat * CadetStaticValues.throwGunDamageCoefficient + this.damageStat * (((float)cadetController.ammo / (float)cadetController.maxAmmo) * 5f), this.force, this.RollCrit(), DamageColorIndex.Default, null, -1f);
                 skillLocator.primary.RemoveAllStocks();
-                cadetController.ammo = 0;
                 cadetController.onAmmoChange?.Invoke();
                 cadetController.gunThrown = true;
             }

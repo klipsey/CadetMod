@@ -41,20 +41,22 @@ namespace CadetMod.Cadet.SkillStates
 
         private void Fire()
         {
-            FireProjectileInfo fireProjectileInfo = default(FireProjectileInfo);
-            fireProjectileInfo.crit = RollCrit();
-            fireProjectileInfo.damage = characterBody.damage * damageCoefficient;
-            fireProjectileInfo.damageColorIndex = DamageColorIndex.Default;
-            fireProjectileInfo.damageTypeOverride = DamageType.SlowOnHit;
-            fireProjectileInfo.owner = characterBody.gameObject;
-            fireProjectileInfo.position = FindModelChild("Robo").position;
-            fireProjectileInfo.rotation = Quaternion.LookRotation(GetAimRay().direction);
-            fireProjectileInfo.procChainMask = default(ProcChainMask);
-            fireProjectileInfo.projectilePrefab = LegacyResourcesAPI.Load<GameObject>("Prefabs/Projectiles/EchoHunterProjectile");
-            fireProjectileInfo.force = 400f;
-            fireProjectileInfo.target = null;
-            FireProjectileInfo fireProjectileInfo2 = fireProjectileInfo;
-            ProjectileManager.instance.FireProjectile(fireProjectileInfo2);
+            if(base.isAuthority)
+            {
+                FireProjectileInfo fireProjectileInfo = default(FireProjectileInfo);
+                fireProjectileInfo.crit = RollCrit();
+                fireProjectileInfo.damage = characterBody.damage * damageCoefficient;
+                fireProjectileInfo.damageColorIndex = DamageColorIndex.Default;
+                fireProjectileInfo.damageTypeOverride = DamageType.SlowOnHit;
+                fireProjectileInfo.owner = characterBody.gameObject;
+                fireProjectileInfo.position = FindModelChild("Robo").position;
+                fireProjectileInfo.rotation = Quaternion.LookRotation(GetAimRay().direction);
+                fireProjectileInfo.procChainMask = default(ProcChainMask);
+                fireProjectileInfo.projectilePrefab = LegacyResourcesAPI.Load<GameObject>("Prefabs/Projectiles/EchoHunterProjectile");
+                fireProjectileInfo.force = 400f;
+                fireProjectileInfo.target = null;
+                ProjectileManager.instance.FireProjectile(fireProjectileInfo);
+            }
         }
     }
 }

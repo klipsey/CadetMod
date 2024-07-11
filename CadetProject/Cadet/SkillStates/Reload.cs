@@ -61,7 +61,6 @@ namespace CadetMod.Cadet.SkillStates
                 }
                 Util.PlaySound("sfx_driver_gun_catch", base.gameObject);
                 GiveStock();
-                cadetController.Reload();
                 this.outer.SetNextStateToMain();
             }
         }
