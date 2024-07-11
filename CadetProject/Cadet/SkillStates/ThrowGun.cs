@@ -36,6 +36,7 @@ namespace CadetMod.Cadet.SkillStates
             Util.PlaySound(attackSoundString, base.gameObject);
             if (base.isAuthority)
             {
+                gun.GetComponent<ProjectileImpactExplosion>().blastRadius = 5f + (((float)cadetController.ammo / (float)cadetController.maxAmmo) * 5f);
                 Ray aimRay = base.GetAimRay();
                 aimRay = this.ModifyProjectileAimRay(aimRay);
                 aimRay.direction = Util.ApplySpread(aimRay.direction, 0f, 0f, 1f, 1f, 0f, this.projectilePitchBonus);

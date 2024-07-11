@@ -3,7 +3,7 @@
     "author": "tsuyoikenko",
     "version_number": "1.0.0",
     "website_url": "",
-    "description": "Revives the Cadet Survivor from the Tsunami Mod.",
+    "description": "Revives the Cadet Survivor from the Tsunami Mod. The pac is bac baby.",
     "dependencies": [
         "bbepis-BepInExPack-5.4.1905",
         "RiskofThunder-R2API_Core-5.0.3",

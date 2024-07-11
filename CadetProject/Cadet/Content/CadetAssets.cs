@@ -61,13 +61,13 @@ namespace CadetMod.Cadet.Content
         {
             mainAssetBundle = assetBundle;
 
+            CreateSounds();
+
             CreateMaterials();
 
             CreateModels();
 
             CreateEffects();
-
-            CreateSounds();
 
             CreateProjectiles();
         }
@@ -194,6 +194,7 @@ namespace CadetMod.Cadet.Content
 
             cadetBoomEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Captain/CaptainAirstrikeImpact1.prefab").WaitForCompletion().InstantiateClone("CadetBoomProjectile");
             cadetBoomEffect.GetComponent<EffectComponent>().applyScale = true;
+            cadetBoomEffect.GetComponent<EffectComponent>().soundName = "Play_captain_shift_impact";
 
             Modules.Content.CreateAndAddEffectDef(cadetBoomEffect);
 
@@ -250,7 +251,6 @@ namespace CadetMod.Cadet.Content
             pie.impactEffect = cadetBoomEffect;
             pie.blastDamageCoefficient = 1f;
             pie.blastProcCoefficient = 1f;
-            pie.lifetimeExpiredSound = explosionSoundDef;
 
             gunPrefab.GetComponent<ProjectileDamage>().damageType = DamageType.Stun1s;
 
@@ -277,7 +277,7 @@ namespace CadetMod.Cadet.Content
         #region sounds
         private static void CreateSounds()
         {
-            explosionSoundDef = Modules.Content.CreateAndAddNetworkSoundEventDef("sfx_driver_explosion");
+            explosionSoundDef = Modules.Content.CreateAndAddNetworkSoundEventDef("Play_captain_shift_impact");
 
         }
         #endregion
