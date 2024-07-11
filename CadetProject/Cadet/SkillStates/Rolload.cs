@@ -15,7 +15,6 @@ namespace CadetMod.Cadet.SkillStates
         protected Vector3 hopVector;
         public float duration = 0.3f;
         public float speedCoefficient = 7f;
-        private ChildLocator childLocator;
         protected CameraTargetParams.AimRequest request;
 
         public override void OnEnter()
@@ -24,12 +23,6 @@ namespace CadetMod.Cadet.SkillStates
             base.OnEnter();
 
             characterBody.SetAimTimer(2f);
-
-            Transform modelTransform = GetModelTransform();
-            if (modelTransform)
-            {
-                childLocator = modelTransform.GetComponent<ChildLocator>();
-            }
 
             if (cameraTargetParams)
             {
@@ -63,7 +56,7 @@ namespace CadetMod.Cadet.SkillStates
                 characterBody.AddBuff(RoR2Content.Buffs.HiddenInvincibility);
             }
 
-            Util.PlaySound("sfx_driver_dash", this.gameObject);
+            Util.PlaySound("sfx_driver_air_dodge", this.gameObject);
 
             GiveStock();
             cadetController.Reload();
@@ -109,6 +102,11 @@ namespace CadetMod.Cadet.SkillStates
                 }
             }
             base.OnExit();
+
+            if (NetworkServer.active)
+            {
+                characterBody.RemoveBuff(RoR2Content.Buffs.HiddenInvincibility);
+            }
         }
 
         public override InterruptPriority GetMinimumInterruptPriority()

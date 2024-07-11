@@ -952,7 +952,7 @@ ModelImporter:
         messageOptions: 0
       - time: 0.6697936
         functionName: Footstep
-        data: 
+        data: FootL
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0

@@ -155,7 +155,7 @@ namespace CadetMod.Cadet.Components
         }
         private void FixedUpdate()
         {
-            maxAmmo = CadetStaticValues.baseMaxAmmo + characterBody.inventory.GetItemCount(RoR2Content.Items.SecondarySkillMagazine);
+            maxAmmo = skillLocator.primary.skillDef.baseMaxStock + characterBody.inventory.GetItemCount(RoR2Content.Items.SecondarySkillMagazine);
 
             if(skillLocator.primary.maxStock != maxAmmo) 
             {
