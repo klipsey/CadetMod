@@ -35,7 +35,7 @@ namespace CadetMod.Cadet.Content
             
             Language.Add(prefix + "NAME", "Cadet");
             Language.Add(prefix + "DESCRIPTION", desc);
-            Language.Add(prefix + "SUBTITLE", "The Quickwitted Soldier");
+            Language.Add(prefix + "SUBTITLE", "The Crashing Tide");
             Language.Add(prefix + "LORE", lore);
             Language.Add(prefix + "OUTRO_FLAVOR", outro);
             Language.Add(prefix + "OUTRO_FAILURE", outroFailure);
