@@ -4,14 +4,14 @@
 
 # Skills
 
-## ICONS WIP
+[![Screenshot-2024-07-12-145607.png](https://i.postimg.cc/BQv9NbG7/Screenshot-2024-07-12-145607.png)]()
 
-[![Screenshot-2024-07-11-152608.png](https://i.postimg.cc/CMN4Hrsm/Screenshot-2024-07-11-152608.png)]()
-
-[![Screenshot-2024-07-11-152627.png](https://i.postimg.cc/5N2SP5P1/Screenshot-2024-07-11-152627.png)]()
+[![Screenshot-2024-07-12-151352.png](https://i.postimg.cc/YqXM3LDj/Screenshot-2024-07-12-151352.png)]()
 
 Cadet concept and everything before the revival - Ruxbieno
 
 Models and Animations - Dotflare
 
-Revival (Code and polish) - Tsuyoikenko
+Icons - synodii
+
+Revival (Code, skills and everything else) - Tsuyoikenko

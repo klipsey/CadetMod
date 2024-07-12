@@ -1,3 +1,7 @@
+# 1.0.4
+
+- Updated Read me
+
 # 1.0.3
 
 - Added skill icons courtesy of synodii
