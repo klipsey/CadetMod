@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using CadetMod.Cadet.Content;
+using EntityStates;
 
 namespace CadetMod.Cadet.SkillStates
 {
@@ -47,6 +48,11 @@ namespace CadetMod.Cadet.SkillStates
             {
                 ProjectileManager.instance.FireProjectile(projectilePrefab, FindModelChild("Robo").position, Util.QuaternionSafeLookRotation(GetAimRay().direction), this.gameObject, characterBody.damage * damageCoefficient, 400f, this.RollCrit(), DamageColorIndex.Default, null, -1f);
             }
+        }
+
+        public override InterruptPriority GetMinimumInterruptPriority()
+        {
+            return InterruptPriority.PrioritySkill;
         }
     }
 }

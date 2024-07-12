@@ -394,7 +394,7 @@ namespace CadetMod.Cadet
 
                 activationState = new EntityStates.SerializableEntityStateType(typeof(FireEcho)),
                 activationStateMachineName = "Weapon2",
-                interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
+                interruptPriority = EntityStates.InterruptPriority.Skill,
 
                 baseRechargeInterval = 6f,
                 baseMaxStock = 1,
@@ -406,7 +406,7 @@ namespace CadetMod.Cadet
                 resetCooldownTimerOnUse = false,
                 fullRestockOnAssign = true,
                 dontAllowPastMaxStocks = false,
-                mustKeyPress = true,
+                mustKeyPress = false,
                 beginSkillCooldownOnSkillEnd = false,
 
                 isCombatSkill = true,
