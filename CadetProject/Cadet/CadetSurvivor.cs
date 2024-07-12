@@ -243,7 +243,7 @@ namespace CadetMod.Cadet
                 skillNameToken = CADET_PREFIX + "PRIMARY_SMG_NAME",
                 skillDescriptionToken = CADET_PREFIX + "PRIMARY_SMG_DESCRIPTION",
                 keywordTokens = new string[] { },
-                skillIcon = assetBundle.LoadAsset<Sprite>("texSecondaryIcon"),
+                skillIcon = assetBundle.LoadAsset<Sprite>("texSMGIcon"),
 
                 activationState = new EntityStates.SerializableEntityStateType(typeof(ShootSmg)),
                 activationStateMachineName = "Weapon",
@@ -285,7 +285,7 @@ namespace CadetMod.Cadet
                 skillNameToken = CADET_PREFIX + "SECONDARY_THROWGUN_NAME",
                 skillDescriptionToken = CADET_PREFIX + "SECONDARY_THROWGUN_DESCRIPTION",
                 keywordTokens = new string[] { },
-                skillIcon = assetBundle.LoadAsset<Sprite>("texButcherKnifeIcon"),
+                skillIcon = assetBundle.LoadAsset<Sprite>("texThrowIcon"),
 
                 activationState = new EntityStates.SerializableEntityStateType(typeof(ThrowGun)),
 
@@ -321,7 +321,7 @@ namespace CadetMod.Cadet
                 skillNameToken = CADET_PREFIX + "UTILITY_ROLLOAD_NAME",
                 skillDescriptionToken = CADET_PREFIX + "UTILITY_ROLLOAD_DESCRIPTION",
                 keywordTokens = new string[] { },
-                skillIcon = assetBundle.LoadAsset<Sprite>("texAtomicIcon"),
+                skillIcon = assetBundle.LoadAsset<Sprite>("texRollIcon"),
 
                 activationState = new EntityStates.SerializableEntityStateType(typeof(Rolload)),
                 activationStateMachineName = "Slide",
@@ -353,7 +353,7 @@ namespace CadetMod.Cadet
                 skillNameToken = CADET_PREFIX + "UTILITY_SLIDE_NAME",
                 skillDescriptionToken = CADET_PREFIX + "UTILITY_SLIDE_DESCRIPTION",
                 keywordTokens = new string[] { },
-                skillIcon = assetBundle.LoadAsset<Sprite>("texAtomicIcon"),
+                skillIcon = assetBundle.LoadAsset<Sprite>("texSlideIcon"),
 
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SlideLoad)),
                 activationStateMachineName = "Slide",
@@ -390,7 +390,7 @@ namespace CadetMod.Cadet
                 skillNameToken = CADET_PREFIX + "SPECIAL_ECHO_NAME",
                 skillDescriptionToken = CADET_PREFIX + "SPECIAL_ECHO_DESCRIPTION",
                 keywordTokens = new string[] {},
-                skillIcon = assetBundle.LoadAsset<Sprite>("texSwapIcon"),
+                skillIcon = assetBundle.LoadAsset<Sprite>("texEchoIcon"),
 
                 activationState = new EntityStates.SerializableEntityStateType(typeof(FireEcho)),
                 activationStateMachineName = "Weapon2",

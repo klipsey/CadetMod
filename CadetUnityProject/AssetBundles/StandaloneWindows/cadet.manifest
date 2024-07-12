@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 83218111
+CRC: 4209485636
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 7b6cb47ea30b689cccbbed1f1c08c0e0
+    Hash: c720df5eed64cea45015cf8829aabdc5
   TypeTreeHash:
     serializedVersion: 2
     Hash: 42d2694ece3e6464c0822cad42100938
@@ -98,6 +98,7 @@ Assets:
 - Assets/Cadet/HUD/Textures/texBulletIndicator.png
 - Assets/Cadet/VFX/matShockwave2.mat
 - Assets/Cadet/Textures/Cadet_diffuse.png
+- Assets/Cadet/Icons/Skill/texSMGIcon.png
 - Assets/Cadet/VFX/Badass/StoneHitEffect.prefab
 - Assets/Cadet/Projectiles/CoinTracer.prefab
 - Assets/Cadet/Animations/maskCadetAim.mask
@@ -106,6 +107,8 @@ Assets:
 - Assets/Cadet/Meshes/CadetCoat.mesh
 - Assets/Cadet/Icons/CadetFinal.png
 - Assets/Cadet/Animations/animCadet.controller
+- Assets/Cadet/Icons/Skill/texRollIcon.png
+- Assets/Cadet/Icons/Skill/texEchoIcon.png
 - Assets/Cadet/Icons/texBuffSyringe.png
 - Assets/Cadet/VFX/texShockwave.png
 - Assets/Cadet/Materials/matCadetCoat.mat
@@ -114,6 +117,7 @@ Assets:
 - Assets/Cadet/Projectiles/CoinOrbEffect.prefab
 - Assets/Cadet/Projectiles/texAlphaGradient6Mask.png
 - Assets/Cadet/Meshes/CadetGunMagazine.mesh
+- Assets/Cadet/Icons/Skill/texThrowIcon.png
 - Assets/Cadet/Meshes/CadetRobot.mesh
 - Assets/Cadet/Meshes/CadetBackpack.001.mesh
 - Assets/Cadet/Textures/CadetWeapon_emission.png
@@ -135,6 +139,7 @@ Assets:
 - Assets/Cadet/HUD/Textures/texChargeRing.png
 - Assets/Cadet/Projectiles/DriverStunGrenadeImpact.prefab
 - Assets/Cadet/CadetMagAmmo.prefab
+- Assets/Cadet/Icons/Skill/texSlideIcon.png
 - Assets/Cadet/Projectiles/DriverStunGrenadeGhost.prefab
 - Assets/Cadet/Meshes/CadetBackpack.mesh
 - Assets/Cadet/Meshes/Cadet.mesh

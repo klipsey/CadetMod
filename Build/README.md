@@ -14,4 +14,6 @@ Cadet concept and everything before the revival - Ruxbieno
 
 Models and Animations - Dotflare
 
-Revival (Code and polish) - Tsuyoikenko
+Icons - synodii
+
+Revival (Code, skills and everything else) - Tsuyoikenko

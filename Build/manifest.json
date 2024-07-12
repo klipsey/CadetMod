@@ -1,9 +1,9 @@
 {
     "name": "Cadet",
     "author": "tsuyoikenko",
-    "version_number": "1.0.2",
-    "website_url": "",
-    "description": "Revives the Cadet Survivor from the Tsunami Mod. The pac is bac baby.",
+    "version_number": "1.0.3",
+    "website_url": "https://github.com/klipsey/CadetMod",
+    "description": "Revives the Cadet Survivor from the Tsunami Mod. The pac is bac baby. Skill icons added made by synodii.",
     "dependencies": [
         "bbepis-BepInExPack-5.4.1905",
         "RiskofThunder-R2API_Core-5.0.3",
