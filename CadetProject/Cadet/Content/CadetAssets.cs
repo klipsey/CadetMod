@@ -49,6 +49,8 @@ namespace CadetMod.Cadet.Content
 
         internal static GameObject headshotOverlay;
         internal static GameObject headshotVisualizer;
+
+        internal static GameObject echoDrones;
         //Models
         internal static GameObject bullet;
         internal static GameObject gun;
@@ -271,6 +273,10 @@ namespace CadetMod.Cadet.Content
             trail2.alignment = LineAlignment.TransformZ;
 
             Modules.Content.AddProjectilePrefab(gunPrefab);
+
+            echoDrones = PrefabAPI.InstantiateClone(LegacyResourcesAPI.Load<GameObject>("Prefabs/Projectiles/EchoHunterProjectile"), "CadetDrones");
+            echoDrones.GetComponent<ProjectileDamage>().damageType = DamageType.SlowOnHit;
+            Modules.Content.AddProjectilePrefab(echoDrones);
         }
         #endregion
 

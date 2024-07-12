@@ -5,14 +5,16 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
+using CadetMod.Cadet.Content;
 
 namespace CadetMod.Cadet.SkillStates
 {
     public class FireEcho : BaseCadetSkillState
     {
-        private float damageCoefficient = 3.5f;
+        private float damageCoefficient = 3.8f;
         private float duration = 1.25f;
         private bool hasFired2;
+        private GameObject projectilePrefab = CadetAssets.echoDrones;
         public override void OnEnter()
         {
             RefreshState();
@@ -43,19 +45,7 @@ namespace CadetMod.Cadet.SkillStates
         {
             if(base.isAuthority)
             {
-                FireProjectileInfo fireProjectileInfo = default(FireProjectileInfo);
-                fireProjectileInfo.crit = RollCrit();
-                fireProjectileInfo.damage = characterBody.damage * damageCoefficient;
-                fireProjectileInfo.damageColorIndex = DamageColorIndex.Default;
-                fireProjectileInfo.damageTypeOverride = DamageType.SlowOnHit;
-                fireProjectileInfo.owner = characterBody.gameObject;
-                fireProjectileInfo.position = FindModelChild("Robo").position;
-                fireProjectileInfo.rotation = Quaternion.LookRotation(GetAimRay().direction);
-                fireProjectileInfo.procChainMask = default(ProcChainMask);
-                fireProjectileInfo.projectilePrefab = LegacyResourcesAPI.Load<GameObject>("Prefabs/Projectiles/EchoHunterProjectile");
-                fireProjectileInfo.force = 400f;
-                fireProjectileInfo.target = null;
-                ProjectileManager.instance.FireProjectile(fireProjectileInfo);
+                ProjectileManager.instance.FireProjectile(projectilePrefab, FindModelChild("Robo").position, Util.QuaternionSafeLookRotation(GetAimRay().direction), this.gameObject, characterBody.damage * damageCoefficient, 400f, this.RollCrit(), DamageColorIndex.Default, null, -1f);
             }
         }
     }

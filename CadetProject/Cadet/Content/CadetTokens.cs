@@ -26,7 +26,7 @@ namespace CadetMod.Cadet.Content
             string desc = ".<color=#CCD3E0>" + Environment.NewLine + Environment.NewLine;
             desc = desc + "< ! > ." + Environment.NewLine + Environment.NewLine;
             desc = desc + "< ! > ." + Environment.NewLine + Environment.NewLine;
-            desc = desc + "< ! > " + Environment.NewLine + Environment.NewLine;
+            desc = desc + "< ! > ." + Environment.NewLine + Environment.NewLine;
             desc = desc + "< ! > ." + Environment.NewLine + Environment.NewLine;
 
             string lore = "";
