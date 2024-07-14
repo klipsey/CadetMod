@@ -4,7 +4,7 @@
 
 # Skills
 
-[![Screenshot-2024-07-12-145607.png](https://i.postimg.cc/BQv9NbG7/Screenshot-2024-07-12-145607.png)]()
+[![Screenshot-2024-07-13-214240.png](https://i.postimg.cc/rFfCJdBg/Screenshot-2024-07-13-214240.png)]()
 
 [![Screenshot-2024-07-12-151352.png](https://i.postimg.cc/YqXM3LDj/Screenshot-2024-07-12-151352.png)]()
 

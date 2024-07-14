@@ -1,3 +1,11 @@
+# 1.0.6
+
+- Fixed leftover frame in sprint
+
+# 1.0.5
+
+- Animation polish by dotflare! (Jump, sprint, landing and more)
+
 # 1.0.4
 
 - Updated Read me
