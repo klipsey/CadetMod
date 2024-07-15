@@ -56,7 +56,7 @@ namespace CadetMod.Cadet.Content
         internal static GameObject gun;
         internal static GameObject casing;
         internal static GameObject gunPrefab;
-        internal static GameObject gunGhost;
+        internal static GameObject grenadePrefab;
         //Sounds
         internal static NetworkSoundEventDef explosionSoundDef;
         public static void Init(AssetBundle assetBundle)
@@ -229,7 +229,7 @@ namespace CadetMod.Cadet.Content
         private static void CreateProjectiles()
         {
             gunPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Bandit2/Bandit2ShivProjectile.prefab").WaitForCompletion().InstantiateClone("CadetGunProjectile");
-            gunPrefab.AddComponent<NetworkIdentity>();
+            if(!gunPrefab.GetComponent<NetworkIdentity>()) gunPrefab.AddComponent<NetworkIdentity>();
             Component.Destroy(gunPrefab.GetComponent<ProjectileStickOnImpact>());
 
             gunPrefab.GetComponent<SphereCollider>().radius = 0.75f;
@@ -274,8 +274,44 @@ namespace CadetMod.Cadet.Content
 
             Modules.Content.AddProjectilePrefab(gunPrefab);
 
+
+            grenadePrefab = PrefabAPI.InstantiateClone(Resources.Load<GameObject>("Prefabs/Projectiles/" + "CommandoGrenadeProjectile"), "CadetGrenade");
+            if (!grenadePrefab.GetComponent<NetworkIdentity>()) grenadePrefab.AddComponent<NetworkIdentity>();
+            grenadePrefab.AddComponent<RocketRotation>();
+
+            grenadePrefab.transform.localScale *= 2f;
+
+            pie = grenadePrefab.AddComponent<ProjectileImpactExplosion>();
+
+            pie.destroyOnEnemy = true;
+            pie.destroyOnWorld = true;
+            pie.impactOnWorld = true;
+            pie.timerAfterImpact = false;
+            pie.lifetime = 12f;
+            pie.lifetimeAfterImpact = 0f;
+            pie.blastRadius = 6f;
+            pie.falloffModel = BlastAttack.FalloffModel.None;
+            pie.canRejectForce = true;
+            pie.fireChildren = false;
+            pie.impactEffect = cadetBoomEffect;
+            pie.blastDamageCoefficient = 1f;
+            pie.blastProcCoefficient = 1f;
+
+            grenadePrefab.GetComponent<ProjectileDamage>().damageType = DamageType.Stun1s;
+
+            grenadePrefab.GetComponent<ProjectileSimple>().desiredForwardSpeed = 120f;
+
+            grenadePrefab.GetComponent<ProjectileController>().ghostPrefab = Resources.Load<GameObject>("Prefabs/Projectiles/CommandoGrenadeProjectile").GetComponent<ProjectileController>().ghostPrefab;
+            grenadePrefab.GetComponent<ProjectileController>().startSound = "";
+
+            grenadePrefab.GetComponent<Rigidbody>().useGravity = true;
+
+            Modules.Content.AddProjectilePrefab(grenadePrefab);
+
             echoDrones = PrefabAPI.InstantiateClone(LegacyResourcesAPI.Load<GameObject>("Prefabs/Projectiles/EchoHunterProjectile"), "CadetDrones");
             echoDrones.GetComponent<ProjectileDamage>().damageType = DamageType.SlowOnHit;
+            echoDrones.GetComponent<ProjectileSimple>().desiredForwardSpeed = 160f;
+
             Modules.Content.AddProjectilePrefab(echoDrones);
         }
         #endregion

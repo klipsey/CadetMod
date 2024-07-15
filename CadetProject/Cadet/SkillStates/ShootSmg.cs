@@ -58,7 +58,6 @@ namespace CadetMod.Cadet.SkillStates
                 this.cadetController.DropBullet(-this.GetModelBaseTransform().transform.right * -Random.Range(4, 12));
             }
 
-            EffectManager.SimpleMuzzleFlash(EntityStates.Commando.CommandoWeapon.FirePistol2.muzzleEffectPrefab, this.gameObject, this.muzzleString, false);
             Util.PlaySound(this.shootSoundString, this.gameObject);
             if (base.isAuthority)
             {
@@ -87,7 +86,7 @@ namespace CadetMod.Cadet.SkillStates
                     procCoefficient = procCoefficient,
                     radius = 0.75f,
                     sniper = false,
-                    stopperMask = LayerIndex.world.mask,
+                    stopperMask = LayerIndex.CommonMasks.bullet,
                     weapon = null,
                     tracerEffectPrefab = this.tracerPrefab,
                     spreadPitchScale = 1f,

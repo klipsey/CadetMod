@@ -31,10 +31,6 @@ namespace CadetMod.Modules
 
             SkillLocator skillLocator = targetPrefab.GetComponent<SkillLocator>();
 
-            if (targetPrefab.TryGetComponent<CadetPassive>(out var passive))
-            {
-                passive.passiveSkillSlot = CreateGenericSkillWithSkillFamily(targetPrefab, "Passive");
-            }
             for (int i = 0; i < slots.Length; i++)
             {
                 switch (slots[i])

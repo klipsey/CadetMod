@@ -28,14 +28,13 @@ namespace CadetMod.Cadet.Components
         private int currentCasing;
         private int currentBullet;
 
+        public bool isLauncher => skillLocator.secondary.skillDef.skillNameToken == CadetSurvivor.CADET_PREFIX + "SECONDARY_GRENADE_NAME";
+
         public int ammo = 20;
 
-        public int maxAmmo = CadetStaticValues.baseMaxAmmo;
+        public int maxAmmo;
 
         public Action onAmmoChange;
-
-        private uint playID1;
-        private uint playID2;
 
         public float jamTimer;
 
@@ -55,7 +54,19 @@ namespace CadetMod.Cadet.Components
         }
         private void Start()
         {
+            maxAmmo = this.skillLocator.primary.skillDef.GetMaxStock(skillLocator.primary);
             ammo = maxAmmo;
+
+            if(isLauncher)
+            {
+                childLocator.FindChild("LauncherModel").gameObject.SetActive(true);
+                childLocator.FindChild("GrenadeModel").gameObject.SetActive(true);
+            }
+            else
+            {
+                childLocator.FindChild("LauncherModel").gameObject.SetActive(false);
+                childLocator.FindChild("GrenadeModel").gameObject.SetActive(false);
+            }
             onAmmoChange?.Invoke();
         }
         public void Reload()
@@ -156,14 +167,17 @@ namespace CadetMod.Cadet.Components
         }
         private void FixedUpdate()
         {
-            maxAmmo = skillLocator.primary.skillDef.baseMaxStock + characterBody.inventory.GetItemCount(RoR2Content.Items.SecondarySkillMagazine);
+            if(maxAmmo != this.skillLocator.primary.skillDef.GetMaxStock(skillLocator.primary) + characterBody.inventory.GetItemCount(RoR2Content.Items.SecondarySkillMagazine))
+            {
+                maxAmmo = this.skillLocator.primary.skillDef.GetMaxStock(skillLocator.primary) + characterBody.inventory.GetItemCount(RoR2Content.Items.SecondarySkillMagazine);
+            }
 
-            if(skillLocator.primary.maxStock != maxAmmo) 
+            if(this.skillLocator.primary.skillDef.GetMaxStock(skillLocator.primary) != maxAmmo) 
             {
                 skillLocator.primaryBonusStockSkill.SetBonusStockFromBody(characterBody.inventory.GetItemCount(RoR2Content.Items.SecondarySkillMagazine));
             }
 
-            if(skillLocator.primary.skillDef.skillNameToken != CadetSurvivor.CADET_PREFIX + "PRIMARY_SMG_NAME")
+            if(skillLocator.primary.skillDef.skillNameToken != CadetSurvivor.CADET_PREFIX + "PRIMARY_SMG_NAME" || skillLocator.primary.skillDef.skillNameToken != CadetSurvivor.CADET_PREFIX + "PRIMARY_SHOTGUN_NAME")
             {
                 if(skillLocator.primary.stock < ammo)
                 {
@@ -180,12 +194,18 @@ namespace CadetMod.Cadet.Components
                     Reload();
                 }
             }
-        }
 
-        private void OnDestroy()
-        {
-            AkSoundEngine.StopPlayingID(this.playID1);
-            AkSoundEngine.StopPlayingID(this.playID2);
+            if(isLauncher)
+            {
+                if (skillLocator.secondary.stock <= 0 && childLocator.FindChild("GrenadeModel").gameObject.activeSelf)
+                {
+                    childLocator.FindChild("GrenadeModel").gameObject.SetActive(false);
+                }
+                else if(skillLocator.secondary.stock > 0 && !childLocator.FindChild("GrenadeModel").gameObject.activeSelf)
+                {
+                    childLocator.FindChild("GrenadeModel").gameObject.SetActive(true);
+                }
+            }
         }
     }
 }

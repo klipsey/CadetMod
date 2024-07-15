@@ -48,7 +48,7 @@ namespace CadetMod.Cadet
             bodyColor = Color.cyan,
             sortPosition = 5.99f,
 
-            crosshair = Modules.Assets.LoadCrosshair("SimpleDot"),
+            crosshair = Modules.Assets.LoadCrosshair("Bandit2"),
             podPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/NetworkedObjects/SurvivorPod"),
 
             maxHealth = 110f,
@@ -105,6 +105,14 @@ namespace CadetMod.Cadet
                 new CustomRendererInfo
                 {
                     childName = "FurModel",
+                },
+                new CustomRendererInfo
+                {
+                    childName = "LauncherModel",
+                },
+                new CustomRendererInfo
+                {
+                    childName = "GrenadeModel",
                 }
         };
 
@@ -242,7 +250,7 @@ namespace CadetMod.Cadet
                 skillName = "CadetSmg",
                 skillNameToken = CADET_PREFIX + "PRIMARY_SMG_NAME",
                 skillDescriptionToken = CADET_PREFIX + "PRIMARY_SMG_DESCRIPTION",
-                keywordTokens = new string[] { },
+                keywordTokens = new string[] { Tokens.agileKeyword },
                 skillIcon = assetBundle.LoadAsset<Sprite>("texSMGIcon"),
 
                 activationState = new EntityStates.SerializableEntityStateType(typeof(ShootSmg)),
@@ -250,7 +258,7 @@ namespace CadetMod.Cadet
                 interruptPriority = EntityStates.InterruptPriority.Skill,
 
                 baseRechargeInterval = 0f,
-                baseMaxStock = CadetStaticValues.baseMaxAmmo,
+                baseMaxStock = CadetStaticValues.baseSMGMaxAmmo,
 
                 rechargeStock = 0,
                 requiredStock = 1,
@@ -273,7 +281,43 @@ namespace CadetMod.Cadet
 
             });
 
-            Skills.AddPrimarySkills(bodyPrefab, Shoot);
+            ReloadSkillDef Shootgun = Skills.CreateReloadSkillDef(new ReloadSkillDefInfo
+            {
+                skillName = "CadetShotgun",
+                skillNameToken = CADET_PREFIX + "PRIMARY_SHOTGUN_NAME",
+                skillDescriptionToken = CADET_PREFIX + "PRIMARY_SHOTGUN_DESCRIPTION",
+                keywordTokens = new string[] { Tokens.agileKeyword },
+                skillIcon = assetBundle.LoadAsset<Sprite>("texShotgunIcon"),
+
+                activationState = new EntityStates.SerializableEntityStateType(typeof(Shotgun)),
+                activationStateMachineName = "Weapon",
+                interruptPriority = EntityStates.InterruptPriority.Skill,
+
+                baseRechargeInterval = 0f,
+                baseMaxStock = CadetStaticValues.baseShotgunMaxAmmo,
+
+                rechargeStock = 0,
+                requiredStock = 1,
+                stockToConsume = 1,
+
+                resetCooldownTimerOnUse = false,
+                fullRestockOnAssign = true,
+                dontAllowPastMaxStocks = false,
+                mustKeyPress = false,
+                beginSkillCooldownOnSkillEnd = false,
+
+                isCombatSkill = true,
+                canceledFromSprinting = false,
+                cancelSprintingOnActivation = false,
+                forceSprintDuringState = false,
+
+                graceDuration = 0.5f,
+                reloadState = new EntityStates.SerializableEntityStateType(typeof(EnterReload)),
+                reloadInterruptPriority = InterruptPriority.Any,
+
+            });
+
+            Skills.AddPrimarySkills(bodyPrefab, Shoot, Shootgun);
             
         }
 
@@ -310,7 +354,38 @@ namespace CadetMod.Cadet
                 forceSprintDuringState = false,
             });
 
-            Skills.AddSecondarySkills(bodyPrefab, throwgun);
+            SkillDef grenade = Skills.CreateSkillDef(new SkillDefInfo
+            {
+                skillName = "Throw Gun",
+                skillNameToken = CADET_PREFIX + "SECONDARY_GRENADE_NAME",
+                skillDescriptionToken = CADET_PREFIX + "SECONDARY_GRENADE_DESCRIPTION",
+                keywordTokens = new string[] { },
+                skillIcon = assetBundle.LoadAsset<Sprite>("texLauncherIcon"),
+
+                activationState = new EntityStates.SerializableEntityStateType(typeof(GrenadeLauncher)),
+
+                activationStateMachineName = "Weapon",
+                interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
+
+                baseMaxStock = 1,
+                baseRechargeInterval = 6f,
+                rechargeStock = 1,
+                requiredStock = 1,
+                stockToConsume = 1,
+
+                resetCooldownTimerOnUse = false,
+                fullRestockOnAssign = true,
+                dontAllowPastMaxStocks = false,
+                beginSkillCooldownOnSkillEnd = false,
+                mustKeyPress = true,
+
+                isCombatSkill = true,
+                canceledFromSprinting = false,
+                cancelSprintingOnActivation = false,
+                forceSprintDuringState = false,
+            });
+
+            Skills.AddSecondarySkills(bodyPrefab, throwgun, grenade);
         }
 
         private void AddUtilitySkills()
@@ -384,7 +459,7 @@ namespace CadetMod.Cadet
 
         private void AddSpecialSkills()
         {
-            SkillDef Echo = Skills.CreateSkillDef(new SkillDefInfo
+            SkillDef echo = Skills.CreateSkillDef(new SkillDefInfo
             {
                 skillName = "Echo",
                 skillNameToken = CADET_PREFIX + "SPECIAL_ECHO_NAME",
@@ -396,7 +471,7 @@ namespace CadetMod.Cadet
                 activationStateMachineName = "Weapon2",
                 interruptPriority = EntityStates.InterruptPriority.Skill,
 
-                baseRechargeInterval = 6f,
+                baseRechargeInterval = 8f,
                 baseMaxStock = 1,
 
                 rechargeStock = 1,
@@ -415,7 +490,7 @@ namespace CadetMod.Cadet
                 forceSprintDuringState = false,
             });
 
-            Skills.AddSpecialSkills(bodyPrefab, Echo);
+            Skills.AddSpecialSkills(bodyPrefab, echo);
         }
 
        
@@ -453,7 +528,9 @@ namespace CadetMod.Cadet
                 "CadetGun",
                 "CadetGunMagazine",
                 "CadetRobot",
-                "Cube.001");
+                "Cube.001",
+                "meshLauncher",
+                "meshGrenade");
 
             //add new skindef to our list of skindefs. this is what we'll be passing to the SkinController
             skins.Add(defaultSkin);
@@ -533,6 +610,7 @@ namespace CadetMod.Cadet
                 CustomEmotesAPI.ImportArmature(CadetSurvivor.characterPrefab, skele);
             };
         }
+        /*
         private static void LoadoutPanelController_Rebuild(On.RoR2.UI.LoadoutPanelController.orig_Rebuild orig, LoadoutPanelController self)
         {
             orig(self);
@@ -569,6 +647,7 @@ namespace CadetMod.Cadet
             HealthComponent healthComponent = self.GetComponent<HealthComponent>();
             SkillLocator skillLocator = self.GetComponent<SkillLocator>();
         }
+        */
         internal static void HUDSetup(HUD hud)
         {
             if (hud.targetBodyObject && hud.targetMaster && hud.targetMaster.bodyPrefab == CadetSurvivor.characterPrefab)

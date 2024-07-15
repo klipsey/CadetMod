@@ -18,6 +18,8 @@ namespace CadetMod.Cadet.Content
             Modules.Content.AddEntityState(typeof(Rolload));
             Modules.Content.AddEntityState(typeof(SlideLoad));
             Modules.Content.AddEntityState(typeof(FireEcho));
+            Modules.Content.AddEntityState(typeof(GrenadeLauncher));
+            Modules.Content.AddEntityState(typeof(Shotgun));
         }
     }
 }
