@@ -83,8 +83,6 @@ namespace CadetMod.Cadet.SkillStates
                         }
                     }
 
-                    if (base.characterMotor.jumpCount == base.characterBody.baseJumpCount - 1) Util.PlaySound("sfx_driver_air_dodge", this.gameObject);
-
                     GenericCharacterMain.ApplyJumpVelocity(base.characterMotor, base.characterBody, horizontalBonus, verticalBonus, false);
 
                     if (this.hasModelAnimator)

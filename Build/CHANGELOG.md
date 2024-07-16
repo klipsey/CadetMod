@@ -1,3 +1,7 @@
+# 1.0.7
+
+- Added two new alt skills
+
 # 1.0.6
 
 - Fixed leftover frame in sprint
