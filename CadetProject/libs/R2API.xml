@@ -2559,7 +2559,7 @@
         <member name="M:R2API.UnlockableAPI.AddUnlockable``1(System.Type,RoR2.UnlockableDef)">
             <summary>
             Add an unlockable tied to an achievement.
-            For an example usage check <see href="https://github.com/ArcPh1r3/HenryTutorial/blob/master/HenryMod/Modules/Achievements/HenryMasteryAchievement.cs">rob repository</see>
+            For an example usage check <see href="https://github.com/ArcPh1r3/CadetTutorial/blob/master/CadetMod/Modules/Achievements/CadetMasteryAchievement.cs">rob repository</see>
             </summary>
             <typeparam name="TUnlockable">Class that inherits from BaseAchievement and implements <see cref="T:R2API.IModdedUnlockableDataProvider"/></typeparam>
             <param name="serverTrackerType">Type that inherits from BaseServerAchievement for achievements that the server needs to track</param>
@@ -2569,7 +2569,7 @@
         <member name="M:R2API.UnlockableAPI.AddUnlockable(System.Type,System.Type,RoR2.UnlockableDef)">
             <summary>
             Add an unlockable tied to an achievement.
-            For an example usage check <see href="https://github.com/ArcPh1r3/HenryTutorial/blob/master/HenryMod/Modules/Achievements/HenryMasteryAchievement.cs">rob repository</see>
+            For an example usage check <see href="https://github.com/ArcPh1r3/CadetTutorial/blob/master/CadetMod/Modules/Achievements/CadetMasteryAchievement.cs">rob repository</see>
             </summary>
             <param name="unlockableType">Class that inherits from BaseAchievement and implements <see cref="T:R2API.IModdedUnlockableDataProvider"/></param>
             <param name="serverTrackerType">Type that inherits from <see cref="T:RoR2.Achievements.BaseServerAchievement"/> for achievements that the server needs to track</param>

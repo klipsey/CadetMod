@@ -25,13 +25,14 @@ namespace CadetMod.Cadet.SkillStates
 
             if(cadetController.gunThrown)
             {
-                base.PlayAnimation("Gesture, Override", "ReloadMissing", "Reload.playbackRate", this.duration);
+                base.PlayCrossfade("Gesture, Override", "ReloadMissing", "Reload.playbackRate", this.duration, 0.05f);
                 duration /= 2f;
             }
             else
             {
+                if (cadetController.grenadeLaunched) duration /= 1.5f;
                 this.cadetController.DropMag(-this.GetModelBaseTransform().transform.right * -Random.Range(4, 12));
-                base.PlayAnimation("Gesture, Override", "Reload", "Reload.playbackRate", this.duration);
+                base.PlayCrossfade("Gesture, Override", "Reload", "Reload.playbackRate", this.duration, 0.05f);
                 soundID = Util.PlayAttackSpeedSound("sfx_driver_pistol_spin", base.gameObject, attackSpeedStat);
                 if (this.spinInstance) GameObject.Destroy(this.spinInstance);
                 this.spinInstance = GameObject.Instantiate(Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Commando/CommandoReloadFX.prefab").WaitForCompletion());
@@ -53,14 +54,7 @@ namespace CadetMod.Cadet.SkillStates
             }
             if (base.isAuthority && base.fixedAge >= this.duration)
             {
-                if (cadetController.gunThrown)
-                {
-                    cadetController.gunThrown = false;
-                }
-                else
-                {
-                    this.cadetController.Mag();
-                }
+                this.cadetController.Mag();
                 Util.PlaySound("sfx_driver_gun_catch", base.gameObject);
                 GiveStock();
                 cadetController.Reload();
@@ -71,6 +65,11 @@ namespace CadetMod.Cadet.SkillStates
         public override void OnExit()
         {
             base.OnExit();
+            
+            cadetController.gunThrown = false;
+            cadetController.grenadeLaunched = false;
+
+
             if (!disabledSound)
             {
                 AkSoundEngine.StopPlayingID(this.soundID);

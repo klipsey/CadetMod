@@ -11,13 +11,16 @@ namespace CadetMod.Cadet.SkillStates
 {
     public class ThrowGun : GenericProjectileBaseState
     {
-        public static float baseDuration = 0.15f;
-        public static float baseDelayDuration = 0.1f * baseDuration;
-        public GameObject gun = CadetAssets.gunPrefab;
+        public static float baseDuration = 0.5f;
+        public static float baseDelayDuration = 0.1f;
+        public GameObject gun;
         public CadetController cadetController;
         public override void OnEnter()
         {
             cadetController = base.gameObject.GetComponent<CadetController>();
+
+            gun = cadetController.gunProjectile;
+
             base.attackSoundString = "sfx_scout_cleaver_throw";
 
             base.baseDuration = baseDuration;
@@ -29,6 +32,11 @@ namespace CadetMod.Cadet.SkillStates
             base.projectilePitchBonus = -3.5f;
 
             base.OnEnter();
+
+            if (base.GetModelAnimator())
+            {
+                base.PlayAnimation("Gesture, Override", "ThrowGun", "Throw.playbackRate", this.duration);
+            }
         }
 
         public override void FireProjectile()
@@ -60,10 +68,6 @@ namespace CadetMod.Cadet.SkillStates
 
         public override void PlayAnimation(float duration)
         {
-            if (base.GetModelAnimator())
-            {
-                base.PlayAnimation("Gesture, Override", "ThrowGun", "Throw.playbackRate", 0.75f / attackSpeedStat);
-            }
         }
     }
 }

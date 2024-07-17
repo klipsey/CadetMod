@@ -73,7 +73,7 @@ namespace CadetMod.Cadet
         {
 
             //uncomment if you have multiple characters
-            //ConfigEntry<bool> characterEnabled = Config.CharacterEnableConfig("Survivors", "Henry");
+            //ConfigEntry<bool> characterEnabled = Config.CharacterEnableConfig("Survivors", "Cadet");
 
             //if (!characterEnabled.Value)
             //    return;
@@ -130,7 +130,7 @@ namespace CadetMod.Cadet
             //the main "Body" state machine has some special properties
             Prefabs.AddMainEntityStateMachine(bodyPrefab, "Body", typeof(SkillStates.MainState), typeof(EntityStates.SpawnTeleporterState));
             //if you set up a custom main characterstate, set it up here
-            //don't forget to register custom entitystates in your HenryStates.cs
+            //don't forget to register custom entitystates in your CadetStates.cs
 
             Prefabs.AddEntityStateMachine(bodyPrefab, "Weapon");
             Prefabs.AddEntityStateMachine(bodyPrefab, "Weapon2");
@@ -269,7 +269,7 @@ namespace CadetMod.Cadet
         {
             SkillDef throwgun = Skills.CreateSkillDef(new SkillDefInfo
             {
-                skillName = "Throw Gun",
+                skillName = "ThrowGun",
                 skillNameToken = CADET_PREFIX + "SECONDARY_THROWGUN_NAME",
                 skillDescriptionToken = CADET_PREFIX + "SECONDARY_THROWGUN_DESCRIPTION",
                 keywordTokens = new string[] { },
@@ -300,7 +300,7 @@ namespace CadetMod.Cadet
 
             SkillDef grenade = Skills.CreateSkillDef(new SkillDefInfo
             {
-                skillName = "Grenade",
+                skillName = "CadetGrenade",
                 skillNameToken = CADET_PREFIX + "SECONDARY_GRENADE_NAME",
                 skillDescriptionToken = CADET_PREFIX + "SECONDARY_GRENADE_DESCRIPTION",
                 keywordTokens = new string[] { },
@@ -312,7 +312,7 @@ namespace CadetMod.Cadet
                 interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
 
                 baseMaxStock = 1,
-                baseRechargeInterval = 6f,
+                baseRechargeInterval = 7f,
                 rechargeStock = 1,
                 requiredStock = 1,
                 stockToConsume = 1,
@@ -537,6 +537,30 @@ namespace CadetMod.Cadet
                 "meshGrenade",
                 "meshBelt2");
 
+            defaultSkin.gameObjectActivations = new SkinDef.GameObjectActivation[]
+{
+                new SkinDef.GameObjectActivation
+                {
+                    gameObject = childLocator.FindChildGameObject("FurModel"),
+                    shouldActivate = true,
+                },
+                new SkinDef.GameObjectActivation
+                {
+                    gameObject = childLocator.FindChildGameObject("BackpackStrapModel"),
+                    shouldActivate = true,
+                },
+                new SkinDef.GameObjectActivation
+                {
+                    gameObject = childLocator.FindChildGameObject("ArmorModel"),
+                    shouldActivate = true,
+                },
+                new SkinDef.GameObjectActivation
+                {
+                    gameObject = childLocator.FindChildGameObject("Belt2Model"),
+                    shouldActivate = true,
+                }
+};
+
             //add new skindef to our list of skindefs. this is what we'll be passing to the SkinController
             skins.Add(defaultSkin);
             #endregion
@@ -545,37 +569,73 @@ namespace CadetMod.Cadet
             #region MasterySkin
 
             ////creating a new skindef as we did before
-            //SkinDef masterySkin = Modules.Skins.CreateSkinDef(HENRY_PREFIX + "MASTERY_SKIN_NAME",
-            //    assetBundle.LoadAsset<Sprite>("texMasteryAchievement"),
-            //    defaultRendererinfos,
-            //    prefabCharacterModel.gameObject,
-            //    HenryUnlockables.masterySkinUnlockableDef);
+            SkinDef masterySkin = Modules.Skins.CreateSkinDef(CADET_PREFIX + "MASTERY_SKIN_NAME",
+                assetBundle.LoadAsset<Sprite>("texMasterySkin"),
+                defaultRendererinfos,
+                prefabCharacterModel.gameObject,
+                CadetUnlockables.masterySkinUnlockableDef);
 
-            ////adding the mesh replacements as above. 
+            //adding the mesh replacements as above. 
             ////if you don't want to replace the mesh (for example, you only want to replace the material), pass in null so the order is preserved
-            //masterySkin.meshReplacements = Modules.Skins.getMeshReplacements(assetBundle, defaultRendererinfos,
-            //    "meshHenrySwordAlt",
-            //    null,//no gun mesh replacement. use same gun mesh
-            //    "meshHenryAlt");
+            masterySkin.meshReplacements = Modules.Skins.getMeshReplacements(assetBundle, defaultRendererinfos,
+                "meshCadetMastery",
+                "meshBackpackMastery",
+                "meshBeltMastery",
+                null,
+                null,
+                "meshButtonsMastery",
+                "meshCoatMastery",
+                "meshGunMastery",
+                "meshGunMagMastery",
+                "meshRobotMastery",
+                null,
+                "meshLauncherMastery",
+                "meshGrenadeMastery",
+                null);
 
             ////masterySkin has a new set of RendererInfos (based on default rendererinfos)
             ////you can simply access the RendererInfos' materials and set them to the new materials for your skin.
-            //masterySkin.rendererInfos[0].defaultMaterial = assetBundle.LoadMaterial("matHenryAlt");
-            //masterySkin.rendererInfos[1].defaultMaterial = assetBundle.LoadMaterial("matHenryAlt");
-            //masterySkin.rendererInfos[2].defaultMaterial = assetBundle.LoadMaterial("matHenryAlt");
+            masterySkin.rendererInfos[0].defaultMaterial = assetBundle.LoadMaterial("matCadetMastery");
+            masterySkin.rendererInfos[1].defaultMaterial = assetBundle.LoadMaterial("matCadetRobotMastery");
+            masterySkin.rendererInfos[2].defaultMaterial = assetBundle.LoadMaterial("matCadetCoatMastery");
+
+
+            masterySkin.rendererInfos[5].defaultMaterial = assetBundle.LoadMaterial("matCadetRobotMastery");
+            masterySkin.rendererInfos[6].defaultMaterial = assetBundle.LoadMaterial("matCadetCoatMastery");
+            masterySkin.rendererInfos[7].defaultMaterial = assetBundle.LoadMaterial("matCadetGunMastery");
+            masterySkin.rendererInfos[8].defaultMaterial = assetBundle.LoadMaterial("matCadetGunMastery");
+            masterySkin.rendererInfos[9].defaultMaterial = assetBundle.LoadMaterial("matCadetRobotMastery");
+
+            masterySkin.rendererInfos[11].defaultMaterial = assetBundle.LoadMaterial("matCadetGunMastery");
+            masterySkin.rendererInfos[12].defaultMaterial = assetBundle.LoadMaterial("matCadetGunMastery");
 
             ////here's a barebones example of using gameobjectactivations that could probably be streamlined or rewritten entirely, truthfully, but it works
-            //masterySkin.gameObjectActivations = new SkinDef.GameObjectActivation[]
-            //{
-            //    new SkinDef.GameObjectActivation
-            //    {
-            //        gameObject = childLocator.FindChildGameObject("GunModel"),
-            //        shouldActivate = false,
-            //    }
-            //};
+            masterySkin.gameObjectActivations = new SkinDef.GameObjectActivation[]
+            {
+                new SkinDef.GameObjectActivation
+                {
+                    gameObject = childLocator.FindChildGameObject("FurModel"),
+                    shouldActivate = false,
+                },
+                new SkinDef.GameObjectActivation
+                {
+                    gameObject = childLocator.FindChildGameObject("BackpackStrapModel"),
+                    shouldActivate = false,
+                },
+                new SkinDef.GameObjectActivation
+                {
+                    gameObject = childLocator.FindChildGameObject("ArmorModel"),
+                    shouldActivate = false,
+                },
+                new SkinDef.GameObjectActivation
+                {
+                    gameObject = childLocator.FindChildGameObject("Belt2Model"),
+                    shouldActivate = false,
+                }
+            };
             ////simply find an object on your child locator you want to activate/deactivate and set if you want to activate/deacitvate it with this skin
 
-            //skins.Add(masterySkin);
+            skins.Add(masterySkin);
 
             #endregion
 
@@ -600,9 +660,6 @@ namespace CadetMod.Cadet
         private void AddHooks()
         {
             HUD.onHudTargetChangedGlobal += HUDSetup;
-            //On.RoR2.CharacterBody.RecalculateStats += CharacterBody_RecalculateStats;
-            //On.RoR2.UI.LoadoutPanelController.Rebuild += LoadoutPanelController_Rebuild;
-            //On.RoR2.HealthComponent.TakeDamage += new On.RoR2.HealthComponent.hook_TakeDamage(HealthComponent_TakeDamage);
             if (CadetPlugin.emotesInstalled) Emotes();
         }
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
@@ -615,44 +672,6 @@ namespace CadetMod.Cadet
                 CustomEmotesAPI.ImportArmature(CadetSurvivor.characterPrefab, skele);
             };
         }
-        /*
-        private static void LoadoutPanelController_Rebuild(On.RoR2.UI.LoadoutPanelController.orig_Rebuild orig, LoadoutPanelController self)
-        {
-            orig(self);
-
-            int slotCounter = 0; 
-            if (self.currentDisplayData.bodyIndex == BodyCatalog.FindBodyIndex("CadetBody"))
-            {
-                foreach (LanguageTextMeshController i in self.gameObject.GetComponentsInChildren<LanguageTextMeshController>())
-                {
-                    if (i && i.token == "LOADOUT_SKILL_MISC")
-                    {
-                        if(slotCounter == 0)
-                        {
-                            i.token = "Passive";
-                            slotCounter++;
-                        }
-                    }
-                }
-            }
-        }
-        private void HealthComponent_TakeDamage(On.RoR2.HealthComponent.orig_TakeDamage orig, HealthComponent self, DamageInfo damageInfo)
-        {
-            orig.Invoke(self, damageInfo);
-        }
-        private void CharacterBody_RecalculateStats(On.RoR2.CharacterBody.orig_RecalculateStats orig, CharacterBody self)
-        {
-            orig(self);
-
-            if (!self || self.baseNameToken != "KENKO_CADET_NAME")
-            {
-                return;
-            }
-            CadetController s = self.GetComponent<CadetController>();
-            HealthComponent healthComponent = self.GetComponent<HealthComponent>();
-            SkillLocator skillLocator = self.GetComponent<SkillLocator>();
-        }
-        */
         internal static void HUDSetup(HUD hud)
         {
             if (hud.targetBodyObject && hud.targetMaster && hud.targetMaster.bodyPrefab == CadetSurvivor.characterPrefab)

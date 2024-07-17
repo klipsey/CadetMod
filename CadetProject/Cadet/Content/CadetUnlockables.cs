@@ -7,19 +7,15 @@ namespace CadetMod.Cadet.Content
 {
     public static class CadetUnlockables
     {
-        public static UnlockableDef characterUnlockableDef = null;
-        public static UnlockableDef masterySkinUnlockableDef = null;
+        public static UnlockableDef characterUnlockableDef;
+        public static UnlockableDef masterySkinUnlockableDef;
 
         public static void Init()
         {
-            /*
-            if(false == true)
-            {
-                characterUnlockableDef = Modules.Content.CreateAndAddUnlockableDef(CadetUnlockAchievement.unlockableIdentifier,
-                Modules.Tokens.GetAchievementNameToken(CadetUnlockAchievement.unlockableIdentifier),
-                CadetSurvivor.instance.assetBundle.LoadAsset<Sprite>("texCadetIcon"));
-            }
-            */
+            masterySkinUnlockableDef = Modules.Content.CreateAndAddUnlockbleDef(
+             CadetMasteryAchievement.unlockableIdentifier,
+             Modules.Tokens.GetAchievementNameToken(CadetMasteryAchievement.identifier),
+             CadetSurvivor.instance.assetBundle.LoadAsset<Sprite>("texMasterySkin"));
         }
     }
 }

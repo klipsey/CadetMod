@@ -27,6 +27,8 @@ namespace CadetMod.Cadet.Components
         private int currentCasing;
         private int currentBullet;
 
+        public GameObject gunProjectile;
+
         public DamageAPI.ModdedDamageType ModdedDamageType = DamageTypes.Default;
         public bool isLauncher => skillLocator.secondary.skillDef.skillNameToken == CadetSurvivor.CADET_PREFIX + "SECONDARY_GRENADE_NAME";
 
@@ -39,6 +41,7 @@ namespace CadetMod.Cadet.Components
         public float jamTimer;
 
         public bool gunThrown = false;
+        public bool grenadeLaunched = false;
         public bool mustReload = false;
         public bool speedUpReload = true;
         private void Awake()
@@ -50,6 +53,7 @@ namespace CadetMod.Cadet.Components
             this.characterModel = modelLocator.modelBaseTransform.GetComponentInChildren<CharacterModel>();
             this.skillLocator = this.GetComponent<SkillLocator>();
             this.skinController = modelLocator.modelTransform.gameObject.GetComponent<ModelSkinController>();
+
             Invoke("InitModelsAndSkillDefs", 0.5f);
 
         }
@@ -86,8 +90,21 @@ namespace CadetMod.Cadet.Components
         }
         private void InitModelsAndSkillDefs()
         {
-            GameObject desiredBullet = CadetAssets.bullet;
-            GameObject desiredCasing = CadetAssets.casing;
+            GameObject desiredBullet;
+            GameObject desiredCasing;
+            if (skinController.currentSkinIndex == 1)
+            {
+                desiredBullet = CadetAssets.bulletMastery;
+                desiredCasing = CadetAssets.casingMastery;
+                gunProjectile = CadetAssets.gunPrefabMastery;
+            }
+            else
+            {
+                desiredBullet = CadetAssets.bullet;
+                desiredCasing = CadetAssets.casing;
+                gunProjectile = CadetAssets.gunPrefab;
+            }
+
             this.currentCasing = 0;
 
             this.casingObjects = new GameObject[this.maxCasingCount + 1];

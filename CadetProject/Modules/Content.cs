@@ -54,7 +54,7 @@ namespace CadetMod.Modules
         {
             ContentPacks.unlockableDefs.Add(unlockableDef);
         }
-        internal static UnlockableDef CreateAndAddUnlockableDef(string identifier, string nameToken, Sprite achievementIcon)
+        internal static UnlockableDef CreateAndAddUnlockbleDef(string identifier, string nameToken, Sprite achievementIcon)
         {
             UnlockableDef unlockableDef = ScriptableObject.CreateInstance<UnlockableDef>();
             unlockableDef.cachedName = identifier;
@@ -85,14 +85,13 @@ namespace CadetMod.Modules
         {
             ContentPacks.buffDefs.Add(buffDef);
         }
-        internal static BuffDef CreateAndAddBuff(string buffName, Sprite buffIcon, Color buffColor, bool canStack, bool isDebuff, bool isCooldown)
+        internal static BuffDef CreateAndAddBuff(string buffName, Sprite buffIcon, Color buffColor, bool canStack, bool isDebuff)
         {
             BuffDef buffDef = ScriptableObject.CreateInstance<BuffDef>();
             buffDef.name = buffName;
             buffDef.buffColor = buffColor;
             buffDef.canStack = canStack;
             buffDef.isDebuff = isDebuff;
-            buffDef.isCooldown = isCooldown;
             buffDef.eliteDef = null;
             buffDef.iconSprite = buffIcon;
 
@@ -125,7 +124,7 @@ namespace CadetMod.Modules
             networkSoundEventDef.eventName = eventName;
 
             AddNetworkSoundEventDef(networkSoundEventDef);
-            
+
             return networkSoundEventDef;
         }
     }

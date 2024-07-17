@@ -12,7 +12,7 @@ namespace CadetMod.Cadet.Content
 
         public static float smgDamageCoefficient = 0.6f;
 
-        public static float shotgunDamageCoefficient = 1f;
+        public static float shotgunDamageCoefficient = 0.6f;
 
         public static int baseSMGMaxAmmo = 20;
 

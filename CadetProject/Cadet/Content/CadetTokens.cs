@@ -41,7 +41,7 @@ namespace CadetMod.Cadet.Content
             Language.Add(prefix + "OUTRO_FAILURE", outroFailure);
 
             #region Skins
-            Language.Add(prefix + "MASTERY_SKIN_NAME", "Alternate");
+            Language.Add(prefix + "MASTERY_SKIN_NAME", "Lieutenant");
             #endregion
 
             #region Passive
@@ -83,9 +83,6 @@ namespace CadetMod.Cadet.Content
             #region Achievements
             Language.Add(Tokens.GetAchievementNameToken(CadetMasteryAchievement.identifier), "Cadet: Mastery");
             Language.Add(Tokens.GetAchievementDescriptionToken(CadetMasteryAchievement.identifier), "As Cadet, beat the game or obliterate on Monsoon.");
-
-            //Language.Add(Tokens.GetAchievementNameToken(CadetUnlockAchievement.identifier), "Batter Up");
-            //Language.Add(Tokens.GetAchievementDescriptionToken(CadetUnlockAchievement.identifier), "Beat the stage 1 teleporter within 3 minutes without picking up a single item.");
 
             #endregion
 

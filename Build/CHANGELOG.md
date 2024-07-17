@@ -1,6 +1,15 @@
+# 1.1.0
+
+- Mastery skin
+- Alt primary and alt secondary nerfs
+
+# 1.0.9
+
+- Fixed stuns, shocks, freezes etc not working
+
 # 1.0.8 
 
-- i tem
+- Item Displays
 
 # 1.0.7
 

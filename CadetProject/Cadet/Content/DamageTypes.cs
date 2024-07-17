@@ -25,24 +25,7 @@ namespace CadetMod.Cadet.Content
         }
         private static void Hook()
         {
-            GlobalEventManager.onServerDamageDealt += GlobalEventManager_onServerDamageDealt;
-            On.RoR2.SetStateOnHurt.OnTakeDamageServer += SetStateOnHurt_OnTakeDamageServer;
-            On.RoR2.GlobalEventManager.OnHitEnemy += new On.RoR2.GlobalEventManager.hook_OnHitEnemy(GlobalEventManager_OnHitEnemy);
-        }
-
-        private static void SetStateOnHurt_OnTakeDamageServer(On.RoR2.SetStateOnHurt.orig_OnTakeDamageServer orig, SetStateOnHurt self, DamageReport damageReport)
-        {
-        }
-
-        private static void GlobalEventManager_OnHitEnemy(On.RoR2.GlobalEventManager.orig_OnHitEnemy orig, GlobalEventManager self, DamageInfo damageInfo, GameObject victim)
-        {
-
-            if (!damageInfo.attacker || !victim)
-            {
-                return;
-            }
-            CharacterBody victimBody = victim.GetComponent<CharacterBody>();
-            orig.Invoke(self, damageInfo, victim);
+            GlobalEventManager.onServerDamageDealt += GlobalEventManager_onServerDamageDealt;        
         }
 
         private static void GlobalEventManager_onServerDamageDealt(DamageReport damageReport)

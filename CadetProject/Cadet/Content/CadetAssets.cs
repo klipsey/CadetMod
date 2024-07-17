@@ -33,19 +33,11 @@ namespace CadetMod.Cadet.Content
         internal static Shader hotpoo = Resources.Load<Shader>("Shaders/Deferred/HGStandard");
 
         //Effects
-        internal static GameObject atomicEffect;
-        internal static GameObject atomicEndEffect;
-
         internal static GameObject cadetBoomEffect;
         internal static GameObject bloodSplatterEffect;
 
         internal static GameObject cadetTracer;
         internal static GameObject cadetTracerCrit;
-
-        internal static GameObject batHitEffect;
-
-        internal static GameObject cadetZoom;
-        internal static GameObject cadetMaxGauge;
 
         internal static GameObject headshotOverlay;
         internal static GameObject headshotVisualizer;
@@ -55,7 +47,11 @@ namespace CadetMod.Cadet.Content
         internal static GameObject bullet;
         internal static GameObject gun;
         internal static GameObject casing;
+        internal static GameObject bulletMastery;
+        internal static GameObject gunMastery;
+        internal static GameObject casingMastery;
         internal static GameObject gunPrefab;
+        internal static GameObject gunPrefabMastery;
         internal static GameObject grenadePrefab;
         //Sounds
         internal static NetworkSoundEventDef explosionSoundDef;
@@ -95,16 +91,28 @@ namespace CadetMod.Cadet.Content
         private static void CreateModels()
         {
             bullet = mainAssetBundle.LoadAsset<GameObject>("Bullet");
-            bullet.GetComponentInChildren<MeshRenderer>().material = mainAssetBundle.LoadAsset<Material>("matBullet");
+            bullet.GetComponentInChildren<MeshRenderer>().material = mainAssetBundle.CreateHopooMaterialFromBundle("matBullet");
             bullet.AddComponent<Modules.Components.BulletController>();
 
             gun = mainAssetBundle.LoadAsset<GameObject>("CadetGunAmmo");
-            gun.GetComponentInChildren<MeshRenderer>().material = mainAssetBundle.LoadAsset<Material>("matCadetGun");
+            gun.GetComponentInChildren<MeshRenderer>().material = mainAssetBundle.CreateHopooMaterialFromBundle("matCadetGun");
             gun.AddComponent<Modules.Components.BulletController>();
 
             casing = mainAssetBundle.LoadAsset<GameObject>("CadetMagAmmo");
-            casing.GetComponentInChildren<MeshRenderer>().material = mainAssetBundle.LoadAsset<Material>("matCadetGun");
+            casing.GetComponentInChildren<MeshRenderer>().material = mainAssetBundle.CreateHopooMaterialFromBundle("matCadetGun");
             casing.AddComponent<Modules.Components.BulletController>();
+
+            bulletMastery = mainAssetBundle.LoadAsset<GameObject>("Bullet");
+            bulletMastery.GetComponentInChildren<MeshRenderer>().material = mainAssetBundle.CreateHopooMaterialFromBundle("matBulletMastery");
+            bulletMastery.AddComponent<Modules.Components.BulletController>();
+
+            gunMastery = mainAssetBundle.LoadAsset<GameObject>("CadetGunAmmo");
+            gunMastery.GetComponentInChildren<MeshRenderer>().material = mainAssetBundle.CreateHopooMaterialFromBundle("matCadetGunMastery");
+            gunMastery.AddComponent<Modules.Components.BulletController>();
+
+            casingMastery = mainAssetBundle.LoadAsset<GameObject>("CadetMagAmmo");
+            casingMastery.GetComponentInChildren<MeshRenderer>().material = mainAssetBundle.CreateHopooMaterialFromBundle("matCadetGunMastery");
+            casingMastery.AddComponent<Modules.Components.BulletController>();
         }
         #region effects
         private static void CreateEffects()
@@ -119,10 +127,6 @@ namespace CadetMod.Cadet.Content
             headshotImage.color = Color.red;
 
             viewer.visualizerPrefab = headshotVisualizer;
-
-            batHitEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Loader/OmniImpactVFXLoader.prefab").WaitForCompletion().InstantiateClone("BatHitEffect");
-            batHitEffect.AddComponent<NetworkIdentity>();
-            Modules.Content.CreateAndAddEffectDef(batHitEffect);
 
             cadetTracer = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/Effects/Tracers/TracerCommandoShotgun").InstantiateClone("CadetShotgunTracer", true);
 
@@ -163,36 +167,6 @@ namespace CadetMod.Cadet.Content
             }
             Modules.Content.CreateAndAddEffectDef(cadetTracer);
             Modules.Content.CreateAndAddEffectDef(cadetTracerCrit);
-
-            atomicEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/KillEliteFrenzy/NoCooldownEffect.prefab").WaitForCompletion().InstantiateClone("CadetAtomicEffect");
-            atomicEffect.AddComponent<NetworkIdentity>();
-            atomicEffect.transform.GetChild(0).GetChild(0).gameObject.GetComponent<ParticleSystemRenderer>().material.SetColor("_TintColor", Color.cyan);
-            atomicEffect.transform.GetChild(0).GetChild(1).gameObject.GetComponent<ParticleSystemRenderer>().material.SetColor("_TintColor", Color.cyan);
-            var main = atomicEffect.transform.GetChild(0).GetChild(0).gameObject.GetComponent<ParticleSystem>().main;
-            main.startColor = Color.cyan;
-            var what = main.startColor;
-            what.m_Mode = ParticleSystemGradientMode.Color;
-
-            atomicEndEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/LunarSkillReplacements/LunarDetonatorConsume.prefab").WaitForCompletion().InstantiateClone("CadetAtomicEnd");
-            atomicEndEffect.AddComponent<NetworkIdentity>();
-            var fart = atomicEndEffect.transform.GetChild(0).gameObject.GetComponent<ParticleSystem>().main;
-            fart.startColor = Color.black;
-            fart = atomicEndEffect.transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().main;
-            fart.startColor = Color.cyan;
-            atomicEndEffect.transform.GetChild(2).gameObject.GetComponent<ParticleSystemRenderer>().material.SetColor("_TintColor", Color.cyan);
-            atomicEndEffect.transform.GetChild(3).gameObject.SetActive(false);
-            atomicEndEffect.transform.GetChild(4).gameObject.GetComponent<ParticleSystemRenderer>().material.SetColor("_TintColor", Color.cyan);
-            Material material = Object.Instantiate(Addressables.LoadAssetAsync<Material>("RoR2/Base/LunarSkillReplacements/matLunarNeedleImpactEffect.mat").WaitForCompletion());
-            material.SetColor("_TintColor", Color.cyan);
-            atomicEndEffect.transform.GetChild(5).gameObject.GetComponent<ParticleSystemRenderer>().material = material;
-            atomicEndEffect.transform.GetChild(6).gameObject.SetActive(false);
-            Object.Destroy(atomicEndEffect.GetComponent<EffectComponent>());
-
-            cadetMaxGauge = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Engi/EngiGrenadeExplosion.prefab").WaitForCompletion().InstantiateClone("CadetMaxGaugeEffect", true);
-            cadetMaxGauge.AddComponent<NetworkIdentity>();
-            cadetMaxGauge.transform.GetChild(0).GetChild(1).transform.localScale *= 2;
-            cadetMaxGauge.GetComponent<EffectComponent>().soundName = "";
-            Modules.Content.CreateAndAddEffectDef(cadetMaxGauge);
 
             cadetBoomEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Captain/CaptainAirstrikeImpact1.prefab").WaitForCompletion().InstantiateClone("CadetBoomProjectile");
             cadetBoomEffect.GetComponent<EffectComponent>().applyScale = true;
@@ -274,6 +248,11 @@ namespace CadetMod.Cadet.Content
 
             Modules.Content.AddProjectilePrefab(gunPrefab);
 
+            gunPrefabMastery = PrefabAPI.InstantiateClone(gunPrefab, "CadetAltGunProjectile");
+
+            gunPrefabMastery.GetComponent<ProjectileController>().ghostPrefab.transform.Find("Model").GetComponent<MeshRenderer>().material = mainAssetBundle.CreateHopooMaterialFromBundle("matCadetGunMastery");
+
+            Modules.Content.AddProjectilePrefab(gunPrefabMastery);
 
             grenadePrefab = PrefabAPI.InstantiateClone(Resources.Load<GameObject>("Prefabs/Projectiles/" + "CommandoGrenadeProjectile"), "CadetGrenade");
             if (!grenadePrefab.GetComponent<NetworkIdentity>()) grenadePrefab.AddComponent<NetworkIdentity>();
@@ -302,7 +281,7 @@ namespace CadetMod.Cadet.Content
             grenadePrefab.GetComponent<ProjectileSimple>().desiredForwardSpeed = 120f;
 
             grenadePrefab.GetComponent<ProjectileController>().ghostPrefab = Resources.Load<GameObject>("Prefabs/Projectiles/CommandoGrenadeProjectile").GetComponent<ProjectileController>().ghostPrefab;
-            grenadePrefab.GetComponent<ProjectileController>().ghostPrefab.transform.Find("mdlCommandoGrenade").gameObject.GetComponent<MeshRenderer>().material = mainAssetBundle.LoadAsset<Material>("matBullet");
+            grenadePrefab.GetComponent<ProjectileController>().ghostPrefab.transform.Find("mdlCommandoGrenade").gameObject.GetComponent<MeshRenderer>().material = mainAssetBundle.CreateHopooMaterialFromBundle("matBullet");
             grenadePrefab.GetComponent<ProjectileController>().ghostPrefab.transform.Find("mdlCommandoGrenade").gameObject.GetComponent<MeshFilter>().mesh = mainAssetBundle.LoadAsset<Mesh>("meshGrenadeProjectile");
             grenadePrefab.GetComponent<ProjectileController>().startSound = "";
 
@@ -382,7 +361,7 @@ namespace CadetMod.Cadet.Content
             if (!commandoMat) commandoMat = Resources.Load<GameObject>("Prefabs/CharacterBodies/CommandoBody").GetComponentInChildren<CharacterModel>().baseRendererInfos[0].defaultMaterial;
 
             Material mat = UnityEngine.Object.Instantiate<Material>(commandoMat);
-            Material tempMat = mainAssetBundle.LoadAsset<Material>(materialName);
+            Material tempMat = mainAssetBundle.CreateHopooMaterialFromBundle(materialName);
 
             if (!tempMat) return commandoMat;
 
