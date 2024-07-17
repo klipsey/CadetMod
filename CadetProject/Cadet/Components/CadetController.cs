@@ -20,7 +20,6 @@ namespace CadetMod.Cadet.Components
         private CharacterModel characterModel;
         private Animator animator;
         private SkillLocator skillLocator;
-        public DamageAPI.ModdedDamageType ModdedDamageType = DamageTypes.Default;
         private readonly int maxCasingCount = 10;
         private readonly int maxBulletCount = 20;
         private GameObject[] casingObjects;
@@ -28,6 +27,7 @@ namespace CadetMod.Cadet.Components
         private int currentCasing;
         private int currentBullet;
 
+        public DamageAPI.ModdedDamageType ModdedDamageType = DamageTypes.Default;
         public bool isLauncher => skillLocator.secondary.skillDef.skillNameToken == CadetSurvivor.CADET_PREFIX + "SECONDARY_GRENADE_NAME";
 
         public int ammo = 20;
@@ -40,6 +40,7 @@ namespace CadetMod.Cadet.Components
 
         public bool gunThrown = false;
         public bool mustReload = false;
+        public bool speedUpReload = true;
         private void Awake()
         {
             this.characterBody = this.GetComponent<CharacterBody>();

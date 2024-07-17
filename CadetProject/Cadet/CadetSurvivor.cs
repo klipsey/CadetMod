@@ -60,62 +60,6 @@ namespace CadetMod.Cadet
             jumpCount = 1,
         };
 
-        public override CustomRendererInfo[] customRendererInfos => new CustomRendererInfo[]
-        {
-                new CustomRendererInfo
-                {
-                    childName = "Model",
-                },
-                new CustomRendererInfo
-                {
-                    childName = "BackPackModel",
-                },
-                new CustomRendererInfo
-                {
-                    childName = "BeltModel",
-                },                
-                new CustomRendererInfo
-                {
-                    childName = "BackPackStrapModel",
-                },
-                new CustomRendererInfo
-                {
-                    childName = "ArmorModel",
-                },
-                new CustomRendererInfo
-                {
-                    childName = "ButtonModel",
-                },
-                new CustomRendererInfo
-                {
-                    childName = "CoatModel",
-                },
-                new CustomRendererInfo
-                {
-                    childName = "GunModel",
-                },
-                new CustomRendererInfo
-                {
-                    childName = "MagModel",
-                },
-                new CustomRendererInfo
-                {
-                    childName = "RobotModel",
-                },
-                new CustomRendererInfo
-                {
-                    childName = "FurModel",
-                },
-                new CustomRendererInfo
-                {
-                    childName = "LauncherModel",
-                },
-                new CustomRendererInfo
-                {
-                    childName = "GrenadeModel",
-                }
-        };
-
         public override UnlockableDef characterUnlockableDef => CadetUnlockables.characterUnlockableDef;
 
         public override ItemDisplaysBase itemDisplays => new CadetItemDisplays();
@@ -356,7 +300,7 @@ namespace CadetMod.Cadet
 
             SkillDef grenade = Skills.CreateSkillDef(new SkillDefInfo
             {
-                skillName = "Throw Gun",
+                skillName = "Grenade",
                 skillNameToken = CADET_PREFIX + "SECONDARY_GRENADE_NAME",
                 skillDescriptionToken = CADET_PREFIX + "SECONDARY_GRENADE_DESCRIPTION",
                 keywordTokens = new string[] { },
@@ -493,10 +437,70 @@ namespace CadetMod.Cadet
             Skills.AddSpecialSkills(bodyPrefab, echo);
         }
 
-       
+
         #endregion skills
 
         #region skins
+
+        public override CustomRendererInfo[] customRendererInfos => new CustomRendererInfo[]
+        {
+                new CustomRendererInfo
+                {
+                    childName = "Model",
+                },
+                new CustomRendererInfo
+                {
+                    childName = "BackpackModel",
+                },
+                new CustomRendererInfo
+                {
+                    childName = "BeltModel",
+                },
+                new CustomRendererInfo
+                {
+                    childName = "BackpackStrapModel",
+                },
+                new CustomRendererInfo
+                {
+                    childName = "ArmorModel",
+                },
+                new CustomRendererInfo
+                {
+                    childName = "ButtonModel",
+                },
+                new CustomRendererInfo
+                {
+                    childName = "CoatModel",
+                },
+                new CustomRendererInfo
+                {
+                    childName = "GunModel",
+                },
+                new CustomRendererInfo
+                {
+                    childName = "MagModel",
+                },
+                new CustomRendererInfo
+                {
+                    childName = "RobotModel",
+                },
+                new CustomRendererInfo
+                {
+                    childName = "FurModel",
+                },
+                new CustomRendererInfo
+                {
+                    childName = "LauncherModel",
+                },
+                new CustomRendererInfo
+                {
+                    childName = "GrenadeModel",
+                },
+                new CustomRendererInfo
+                {
+                    childName = "Belt2Model",
+                },
+        };
         public override void InitializeSkins()
         {
             ModelSkinController skinController = prefabCharacterModel.gameObject.AddComponent<ModelSkinController>();
@@ -519,18 +523,19 @@ namespace CadetMod.Cadet
             //uncomment this when you have another skin
             defaultSkin.meshReplacements = Modules.Skins.getMeshReplacements(assetBundle, defaultRendererinfos,
                 "Cadet",
-                "CadetBackpack.001",
-                "BaseMeshBKP.002",
-                "CadetBackpack",
+                "meshBackpack",
+                "meshBelt",
+                "meshBackpackStrap",
                 "CadetArmor",
-                "CadetArmor.001",
+                "meshButtons",
                 "CadetCoat",
                 "CadetGun",
                 "CadetGunMagazine",
                 "CadetRobot",
-                "Cube.001",
+                "meshFur",
                 "meshLauncher",
-                "meshGrenade");
+                "meshGrenade",
+                "meshBelt2");
 
             //add new skindef to our list of skindefs. this is what we'll be passing to the SkinController
             skins.Add(defaultSkin);

@@ -39,7 +39,9 @@ namespace CadetMod.Cadet.SkillStates
                 Ray aimRay = base.GetAimRay();
                 aimRay = this.ModifyProjectileAimRay(aimRay);
                 aimRay.direction = Util.ApplySpread(aimRay.direction, 0f, 0f, 1f, 1f, 0f, this.projectilePitchBonus);
-                ProjectileManager.instance.FireProjectile(grenade, aimRay.origin, Util.QuaternionSafeLookRotation(aimRay.direction), this.gameObject, this.damageStat * CadetStaticValues.grenadeDamageCoefficient, this.force, this.RollCrit(), DamageColorIndex.Default, null, -1f);            }
+                ProjectileManager.instance.FireProjectile(grenade, aimRay.origin, Util.QuaternionSafeLookRotation(aimRay.direction), this.gameObject, this.damageStat * CadetStaticValues.grenadeDamageCoefficient, this.force, this.RollCrit(), DamageColorIndex.Default, null, -1f);
+                cadetController.gunThrown= true;
+            }
         }
 
         public override void FixedUpdate()

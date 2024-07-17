@@ -302,6 +302,8 @@ namespace CadetMod.Cadet.Content
             grenadePrefab.GetComponent<ProjectileSimple>().desiredForwardSpeed = 120f;
 
             grenadePrefab.GetComponent<ProjectileController>().ghostPrefab = Resources.Load<GameObject>("Prefabs/Projectiles/CommandoGrenadeProjectile").GetComponent<ProjectileController>().ghostPrefab;
+            grenadePrefab.GetComponent<ProjectileController>().ghostPrefab.transform.Find("mdlCommandoGrenade").gameObject.GetComponent<MeshRenderer>().material = mainAssetBundle.LoadAsset<Material>("matBullet");
+            grenadePrefab.GetComponent<ProjectileController>().ghostPrefab.transform.Find("mdlCommandoGrenade").gameObject.GetComponent<MeshFilter>().mesh = mainAssetBundle.LoadAsset<Mesh>("meshGrenadeProjectile");
             grenadePrefab.GetComponent<ProjectileController>().startSound = "";
 
             grenadePrefab.GetComponent<Rigidbody>().useGravity = true;

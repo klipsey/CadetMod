@@ -21,6 +21,8 @@ namespace CadetMod.Cadet.SkillStates
             base.OnEnter();
             this.duration = baseDuration / attackSpeedStat;
 
+            if (cadetController.speedUpReload) duration /= 2f;
+
             if(cadetController.gunThrown)
             {
                 base.PlayAnimation("Gesture, Override", "ReloadMissing", "Reload.playbackRate", this.duration);
