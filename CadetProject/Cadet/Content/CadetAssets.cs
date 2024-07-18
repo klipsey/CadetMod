@@ -204,13 +204,13 @@ namespace CadetMod.Cadet.Content
         {
             gunPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Bandit2/Bandit2ShivProjectile.prefab").WaitForCompletion().InstantiateClone("CadetGunProjectile");
             if(!gunPrefab.GetComponent<NetworkIdentity>()) gunPrefab.AddComponent<NetworkIdentity>();
-            Component.Destroy(gunPrefab.GetComponent<ProjectileStickOnImpact>());
+            Component.DestroyImmediate(gunPrefab.GetComponent<ProjectileStickOnImpact>());
 
             gunPrefab.GetComponent<SphereCollider>().radius = 0.75f;
 
-            Component.Destroy(gunPrefab.GetComponent<DelayedEvent>());
+            Component.DestroyImmediate(gunPrefab.GetComponent<DelayedEvent>());
 
-            Component.Destroy(gunPrefab.GetComponent<ProjectileSingleTargetImpact>());
+            Component.DestroyImmediate(gunPrefab.GetComponent<ProjectileSingleTargetImpact>());
 
             ProjectileImpactExplosion pie = gunPrefab.AddComponent<ProjectileImpactExplosion>();
 

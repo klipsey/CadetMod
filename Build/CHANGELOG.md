@@ -1,3 +1,12 @@
+# 1.1.2
+
+- Fixed mastery skin dealing double damage on gun throw
+- Fixed robot texturing on mastery skin
+
+# 1.1.1 
+
+- Read Me
+
 # 1.1.0
 
 - Mastery skin
