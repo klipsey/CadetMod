@@ -8,6 +8,8 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.Networking;
 using CadetMod.Cadet.Content;
 using RoR2.Skills;
+using CadetMod.Modules.Components;
+using RoR2.Projectile;
 
 namespace CadetMod.Cadet.Components
 {
@@ -28,7 +30,7 @@ namespace CadetMod.Cadet.Components
         private int currentBullet;
 
         public GameObject gunProjectile;
-
+        public Material matGunSkin;
         public DamageAPI.ModdedDamageType ModdedDamageType = DamageTypes.Default;
         public bool isLauncher => skillLocator.secondary.skillDef.skillNameToken == CadetSurvivor.CADET_PREFIX + "SECONDARY_GRENADE_NAME";
 
@@ -92,17 +94,20 @@ namespace CadetMod.Cadet.Components
         {
             GameObject desiredBullet;
             GameObject desiredCasing;
+
             if (skinController.currentSkinIndex == 1)
             {
                 desiredBullet = CadetAssets.bulletMastery;
                 desiredCasing = CadetAssets.casingMastery;
                 gunProjectile = CadetAssets.gunPrefabMastery;
+                matGunSkin = CadetAssets.gunPrefabMastery.GetComponent<ProjectileController>().ghostPrefab.transform.Find("Model").GetComponent<MeshRenderer>().material;
             }
             else
             {
                 desiredBullet = CadetAssets.bullet;
                 desiredCasing = CadetAssets.casing;
                 gunProjectile = CadetAssets.gunPrefab;
+                matGunSkin = CadetAssets.gunPrefab.GetComponent<ProjectileController>().ghostPrefab.transform.Find("Model").GetComponent<MeshRenderer>().material;
             }
 
             this.currentCasing = 0;
@@ -182,6 +187,13 @@ namespace CadetMod.Cadet.Components
 
             this.currentBullet++;
             if (this.currentBullet >= this.maxBulletCount) this.currentBullet = 0;
+        }
+        public void DropShotgun()
+        {
+            GameObject newEffect = GameObject.Instantiate(CadetAssets.discardedShotgunEffect);
+            newEffect.GetComponent<DiscardShotgunComponent>().Init(this.matGunSkin, (this.characterBody.characterDirection.forward * -2.5f) + (Vector3.up * 9f) + this.characterBody.characterMotor.velocity);
+            newEffect.transform.rotation = this.characterBody.modelLocator.modelTransform.rotation;
+            newEffect.transform.position = this.childLocator.FindChild("Weapon2").position + (Vector3.up * 0.5f);
         }
         private void FixedUpdate()
         {

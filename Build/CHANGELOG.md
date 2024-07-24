@@ -1,3 +1,17 @@
+# 1.1.5
+
+- Fixed base skin gun not appearing?? (why tf does it keep doing this)
+
+# 1.1.4
+
+- Changed / added new special from old cadets concept and retired old special to alt special
+- Changed some tokens to old cadet concept tokens
+- Readded Emotes. 1 or 2 to activate by default
+
+# 1.1.3
+
+- Token fixes
+
 # 1.1.2
 
 - Fixed mastery skin dealing double damage on gun throw

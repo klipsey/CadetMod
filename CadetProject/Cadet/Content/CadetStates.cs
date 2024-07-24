@@ -10,6 +10,7 @@ namespace CadetMod.Cadet.Content
             Modules.Content.AddEntityState(typeof(BaseCadetSkillState));
             Modules.Content.AddEntityState(typeof(MainState));
             Modules.Content.AddEntityState(typeof(BaseCadetState));
+            Modules.Content.AddEntityState(typeof(BaseEmote));
             Modules.Content.AddEntityState(typeof(ShootSmg));
             Modules.Content.AddEntityState(typeof(ThrowGun));
             Modules.Content.AddEntityState(typeof(EnterReload));
@@ -20,6 +21,9 @@ namespace CadetMod.Cadet.Content
             Modules.Content.AddEntityState(typeof(FireEcho));
             Modules.Content.AddEntityState(typeof(GrenadeLauncher));
             Modules.Content.AddEntityState(typeof(Shotgun));
+            Modules.Content.AddEntityState(typeof(UltraShotgun));
+            Modules.Content.AddEntityState(typeof(EmoteBot));
+            Modules.Content.AddEntityState(typeof(Rest));
         }
     }
 }

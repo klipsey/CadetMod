@@ -18,6 +18,7 @@ using UnityEngine.UI;
 using System.Reflection;
 using static UnityEngine.ParticleSystem.PlaybackState;
 using Rewired.ComponentControls.Effects;
+using CadetMod.Modules.Components;
 
 namespace CadetMod.Cadet.Content
 {
@@ -43,6 +44,10 @@ namespace CadetMod.Cadet.Content
         internal static GameObject headshotVisualizer;
 
         internal static GameObject echoDrones;
+
+        internal static GameObject shotgunTracer;
+
+        public static GameObject discardedShotgunEffect;
         //Models
         internal static GameObject bullet;
         internal static GameObject gun;
@@ -117,6 +122,10 @@ namespace CadetMod.Cadet.Content
         #region effects
         private static void CreateEffects()
         {
+            discardedShotgunEffect = mainAssetBundle.LoadAsset<GameObject>("DiscardEffect");
+            discardedShotgunEffect.AddComponent<DiscardShotgunComponent>();
+            discardedShotgunEffect.gameObject.layer = LayerIndex.ragdoll.intVal;
+
             headshotOverlay = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/Railgunner/RailgunnerScopeLightOverlay.prefab").WaitForCompletion().InstantiateClone("CadetHeadshotOverlay", false);
             SniperTargetViewer viewer = headshotOverlay.GetComponentInChildren<SniperTargetViewer>();
             headshotOverlay.transform.Find("ScopeOverlay").gameObject.SetActive(false);
@@ -141,10 +150,10 @@ namespace CadetMod.Cadet.Content
                 if (i)
                 {
                     bulletMat = UnityEngine.Object.Instantiate<Material>(i.material);
-                    bulletMat.SetColor("_TintColor", Color.green);
+                    bulletMat.SetColor("_TintColor", Color.red);
                     i.material = bulletMat;
-                    i.startColor = Color.green;
-                    i.endColor = Color.yellow;
+                    i.startColor = Color.red;
+                    i.endColor = Color.white;
                 }
             }
 
@@ -159,10 +168,10 @@ namespace CadetMod.Cadet.Content
                 if (i)
                 {
                     bulletMat = UnityEngine.Object.Instantiate<Material>(i.material);
-                    bulletMat.SetColor("_TintColor", Color.green);
+                    bulletMat.SetColor("_TintColor", Color.red);
                     i.material = bulletMat;
-                    i.startColor = Color.green;
-                    i.endColor = Color.yellow;
+                    i.startColor = Color.red;
+                    i.endColor = Color.red;
                 }
             }
             Modules.Content.CreateAndAddEffectDef(cadetTracer);
@@ -194,6 +203,7 @@ namespace CadetMod.Cadet.Content
             bloodSplatterEffect.transform.GetChild(14).gameObject.SetActive(false);
             bloodSplatterEffect.transform.GetChild(15).gameObject.SetActive(false);
             bloodSplatterEffect.transform.localScale = Vector3.one;
+
             CadetMod.Modules.Content.CreateAndAddEffectDef(bloodSplatterEffect);
         }
 
@@ -280,9 +290,13 @@ namespace CadetMod.Cadet.Content
 
             grenadePrefab.GetComponent<ProjectileSimple>().desiredForwardSpeed = 120f;
 
-            grenadePrefab.GetComponent<ProjectileController>().ghostPrefab = Resources.Load<GameObject>("Prefabs/Projectiles/CommandoGrenadeProjectile").GetComponent<ProjectileController>().ghostPrefab;
-            grenadePrefab.GetComponent<ProjectileController>().ghostPrefab.transform.Find("mdlCommandoGrenade").gameObject.GetComponent<MeshRenderer>().material = mainAssetBundle.CreateHopooMaterialFromBundle("matBullet");
-            grenadePrefab.GetComponent<ProjectileController>().ghostPrefab.transform.Find("mdlCommandoGrenade").gameObject.GetComponent<MeshFilter>().mesh = mainAssetBundle.LoadAsset<Mesh>("meshGrenadeProjectile");
+            GameObject ghost = Modules.Assets.CreateProjectileGhostPrefab(mainAssetBundle, "CadetGrenadeGhost");
+            ghost.transform.GetChild(0).Find("Smoke").gameObject.AddComponent<DetachOnDestroy>();
+            ghost.transform.GetChild(0).Find("Smoke").GetComponent<ParticleSystemRenderer>().material = Addressables.LoadAssetAsync<Material>("RoR2/Base/Common/VFX/matDustDirectional.mat").WaitForCompletion();
+            ghost.transform.GetChild(0).Find("Flame").GetComponent<ParticleSystemRenderer>().material = Addressables.LoadAssetAsync<Material>("RoR2/Base/Golem/matVFXFlame1.mat").WaitForCompletion();
+
+
+            grenadePrefab.GetComponent<ProjectileController>().ghostPrefab = ghost;
             grenadePrefab.GetComponent<ProjectileController>().startSound = "";
 
             grenadePrefab.GetComponent<Rigidbody>().useGravity = true;

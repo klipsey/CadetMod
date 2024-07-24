@@ -153,6 +153,8 @@ AvatarMask:
     m_Weight: 0
   - m_Path: Armature/ROOT/BASE/stomach/spine/chest/shoulder.L/arm1.L/arm2.L/hand.L/thumb.L/thumb1.L/thumb2.L
     m_Weight: 0
+  - m_Path: Armature/ROOT/BASE/stomach/spine/chest/shoulder.L/arm1.L/arm2.L/hand.L/Weapon.R
+    m_Weight: 0
   - m_Path: Armature/ROOT/BASE/stomach/spine/chest/shoulder.R
     m_Weight: 0
   - m_Path: Armature/ROOT/BASE/stomach/spine/chest/shoulder.R/arm1.R
@@ -191,13 +193,13 @@ AvatarMask:
     m_Weight: 0
   - m_Path: Armature/ROOT/BASE/stomach/spine/chest/shoulder.R/arm1.R/arm2.R/hand.R/thumb.R/thumb1.R/thumb2.R
     m_Weight: 0
-  - m_Path: Armature/ROOT/BASE/stomach/spine/chest/shoulder.R/arm1.R/arm2.R/hand.R/Weapon
+  - m_Path: Armature/ROOT/BASE/stomach/spine/chest/shoulder.R/arm1.R/arm2.R/hand.R/Weapon.L
     m_Weight: 0
-  - m_Path: Armature/ROOT/BASE/stomach/spine/chest/shoulder.R/arm1.R/arm2.R/hand.R/Weapon/Smear1
+  - m_Path: Armature/ROOT/BASE/stomach/spine/chest/shoulder.R/arm1.R/arm2.R/hand.R/Weapon.L/Smear1
     m_Weight: 0
-  - m_Path: Armature/ROOT/BASE/stomach/spine/chest/shoulder.R/arm1.R/arm2.R/hand.R/Weapon/Smear1/Barrel
+  - m_Path: Armature/ROOT/BASE/stomach/spine/chest/shoulder.R/arm1.R/arm2.R/hand.R/Weapon.L/Smear1/Barrel
     m_Weight: 0
-  - m_Path: Armature/ROOT/BASE/stomach/spine/chest/shoulder.R/arm1.R/arm2.R/hand.R/Weapon/Smear2
+  - m_Path: Armature/ROOT/BASE/stomach/spine/chest/shoulder.R/arm1.R/arm2.R/hand.R/Weapon.L/Smear2
     m_Weight: 0
   - m_Path: Armature/ROOT/ikLeg.L
     m_Weight: 0
@@ -207,17 +209,9 @@ AvatarMask:
     m_Weight: 0
   - m_Path: Armature/ROOT/ikLeg.R/knee.R
     m_Weight: 0
-  - m_Path: BaseMeshBKP.002
-    m_Weight: 0
   - m_Path: Cadet
     m_Weight: 0
   - m_Path: CadetArmor
-    m_Weight: 0
-  - m_Path: CadetArmor.001
-    m_Weight: 0
-  - m_Path: CadetBackpack
-    m_Weight: 0
-  - m_Path: CadetBackpack.001
     m_Weight: 0
   - m_Path: CadetCoat
     m_Weight: 0
@@ -227,5 +221,21 @@ AvatarMask:
     m_Weight: 0
   - m_Path: CadetRobot
     m_Weight: 0
-  - m_Path: Cube.001
+  - m_Path: meshBackpack
+    m_Weight: 0
+  - m_Path: meshBackpackStrap
+    m_Weight: 0
+  - m_Path: meshBelt
+    m_Weight: 0
+  - m_Path: meshBelt2
+    m_Weight: 0
+  - m_Path: meshButtons
+    m_Weight: 0
+  - m_Path: meshFur
+    m_Weight: 0
+  - m_Path: meshGrenade
+    m_Weight: 0
+  - m_Path: meshLauncher
+    m_Weight: 0
+  - m_Path: meshShotgun
     m_Weight: 0

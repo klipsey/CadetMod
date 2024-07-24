@@ -22,4 +22,4 @@ Item Displays - KoalaWalls
 
 Mastery Skin Design - rekka
 
-Everything else - Tsuyoikenko
+Everything Else - Tsuyoikenko

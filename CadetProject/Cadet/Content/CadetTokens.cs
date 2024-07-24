@@ -2,6 +2,7 @@
 using CadetMod.Modules;
 using CadetMod.Cadet;
 using CadetMod.Cadet.Achievements;
+using CadetMod.Cadet.SkillStates;
 
 namespace CadetMod.Cadet.Content
 {
@@ -25,17 +26,27 @@ namespace CadetMod.Cadet.Content
 
             string desc = "The Cadet is a versatile gunner who is able to weave through combat with close range weapons and quick mobility.<color=#CCD3E0>" + Environment.NewLine + Environment.NewLine;
             desc = desc + "< ! > Make sure to Shoot at a close distance to effectively use your limited ammo count without decreasing your damage." + Environment.NewLine + Environment.NewLine;
-            desc = desc + "< ! > Throw Gun increases its damage and radius with your current ammo so make sure to use it when your magazine is full." + Environment.NewLine + Environment.NewLine;
-            desc = desc + "< ! > Use Roll to swiftly avoid burst damage and to fully restock your magazine." + Environment.NewLine + Environment.NewLine;
+            desc = desc + "< ! > Plan C increases its damage and radius with your current ammo so make sure to use it when your magazine is full." + Environment.NewLine + Environment.NewLine;
+            desc = desc + "< ! > Use Replenshing Roll to swiftly avoid burst damage and to fully restock your magazine." + Environment.NewLine + Environment.NewLine;
             desc = desc + "< ! > Try to use Echo Drones as often as you can as it will help clear out any enemies you may have missed while on the move." + Environment.NewLine + Environment.NewLine;
 
-            string lore = "I love the smell of rain, and I love the sound of the ocean waves.";
+            string lore = "\"Have you ever thought about making a difference in this world? " +
+                "Do you believe you're destined for honor-bound glory? " +
+                "Does your body ache for the adrenaline rush that only life-threatening situations provide? " +
+                "If you answered yes to any of these questions, then consider joining our ranks!" +
+                "\"\r\n\r\nThe barely audible television played in the shelter, a new addition. " +
+                "Perfectly placed in the middle, it was the center of attention to the young impressionable eyes of the area with nothing to lose. " +
+                "Some of them came quickly, automatically entranced by the promise of something better than whatever they called their current situation. " +
+                "Others tried to hold out, fearful of the idea of a military life, although one can only hold out for so long before they don't have any other options left but to swallow whatever complaints they have and roll with it." +
+                "\r\n\r\nThe rest of them? They either got with the program, or got crushed under the city's rubble. " +
+                "Indecisiveness isn't an option, not in this age at least.\r\n\r\n\"And remember, you'll always have a place here! " +
+                "Visit your local recruitment center today! See you soon, soldier!\"\r\n\r\nYeah. Not an option, never has been.\r\n";
             string outro = "and he left, an echo of his past self.";
-            string outroFailure = "and he vanished, fading into darkness.";
+            string outroFailure = "and he vanished, a waste of passion.";
             
             Language.Add(prefix + "NAME", "Cadet");
             Language.Add(prefix + "DESCRIPTION", desc);
-            Language.Add(prefix + "SUBTITLE", "The Crashing Tide");
+            Language.Add(prefix + "SUBTITLE", "Aspiring Soldier");
             Language.Add(prefix + "LORE", lore);
             Language.Add(prefix + "OUTRO_FLAVOR", outro);
             Language.Add(prefix + "OUTRO_FAILURE", outroFailure);
@@ -76,6 +87,9 @@ namespace CadetMod.Cadet.Content
             #endregion
 
             #region Special
+            Language.Add(prefix + "SPECIAL_ULTRA_NAME", "Plan A");
+            Language.Add(prefix + "SPECIAL_ULTRA_DESCRIPTION", $"{Tokens.agilePrefix}. Fire a heavy burst of pellets, dealing <style=cIsDamage>{UltraShotgun.bulletCount}x{100f * UltraShotgun.damageCoefficient}% damage</style>.");
+
             Language.Add(prefix + "SPECIAL_ECHO_NAME", "Echo Drones");
             Language.Add(prefix + "SPECIAL_ECHO_DESCRIPTION", $"Fabricate <style=cIsDamage>two drones</style> that seek out nearby enemies dealing <style=cIsDamage>2x{100f * 3.5f}% damage</style>.");
             #endregion

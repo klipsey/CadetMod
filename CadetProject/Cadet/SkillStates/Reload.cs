@@ -37,7 +37,7 @@ namespace CadetMod.Cadet.SkillStates
                 if (this.spinInstance) GameObject.Destroy(this.spinInstance);
                 this.spinInstance = GameObject.Instantiate(Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Commando/CommandoReloadFX.prefab").WaitForCompletion());
                 this.spinInstance.transform.parent = base.GetModelChildLocator().FindChild("Weapon");
-                this.spinInstance.transform.localRotation = Quaternion.Euler(new Vector3(0f, 80f, 0f));
+                this.spinInstance.transform.localRotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
                 this.spinInstance.transform.localPosition = Vector3.zero;
             }
         }

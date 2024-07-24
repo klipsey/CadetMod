@@ -4,7 +4,7 @@ using RoR2;
 using RoR2.UI;
 using CadetMod.Cadet.Components;
 
-namespace RobDriver.Modules.Components
+namespace Cadet.Modules.Components
 {
     public class AmmoCounter : MonoBehaviour
     {

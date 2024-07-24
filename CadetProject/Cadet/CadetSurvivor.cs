@@ -16,7 +16,7 @@ using R2API.Networking;
 using CadetMod.Cadet.Components;
 using CadetMod.Cadet.Content;
 using CadetMod.Cadet.SkillStates;
-using RobDriver.Modules.Components;
+using Cadet.Modules.Components;
 using HG;
 using EntityStates;
 using AncientScepter;
@@ -403,6 +403,38 @@ namespace CadetMod.Cadet
 
         private void AddSpecialSkills()
         {
+
+            SkillDef shotgun = Skills.CreateSkillDef(new SkillDefInfo
+            {
+                skillName = "Ultra Shotgun",
+                skillNameToken = CADET_PREFIX + "SPECIAL_ULTRA_NAME",
+                skillDescriptionToken = CADET_PREFIX + "SPECIAL_ULTRA_DESCRIPTION",
+                keywordTokens = new string[] { Tokens.agileKeyword },
+                skillIcon = assetBundle.LoadAsset<Sprite>("texShotgunSpecialIcon"),
+
+                activationState = new EntityStates.SerializableEntityStateType(typeof(UltraShotgun)),
+                activationStateMachineName = "Weapon2",
+                interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
+
+                baseRechargeInterval = 9f,
+                baseMaxStock = 1,
+
+                rechargeStock = 1,
+                requiredStock = 1,
+                stockToConsume = 1,
+
+                resetCooldownTimerOnUse = false,
+                fullRestockOnAssign = true,
+                dontAllowPastMaxStocks = false,
+                mustKeyPress = false,
+                beginSkillCooldownOnSkillEnd = false,
+
+                isCombatSkill = true,
+                canceledFromSprinting = false,
+                cancelSprintingOnActivation = false,
+                forceSprintDuringState = false,
+            });
+
             SkillDef echo = Skills.CreateSkillDef(new SkillDefInfo
             {
                 skillName = "Echo",
@@ -434,7 +466,7 @@ namespace CadetMod.Cadet
                 forceSprintDuringState = false,
             });
 
-            Skills.AddSpecialSkills(bodyPrefab, echo);
+            Skills.AddSpecialSkills(bodyPrefab, shotgun, echo);
         }
 
 
@@ -500,6 +532,10 @@ namespace CadetMod.Cadet
                 {
                     childName = "Belt2Model",
                 },
+                new CustomRendererInfo
+                {
+                    childName = "ShotgunModel",
+                },
         };
         public override void InitializeSkins()
         {
@@ -509,6 +545,8 @@ namespace CadetMod.Cadet
             CharacterModel.RendererInfo[] defaultRendererinfos = prefabCharacterModel.baseRendererInfos;
 
             List<SkinDef> skins = new List<SkinDef>();
+
+            childLocator.FindChildGameObject("ShotgunModel").SetActive(false);
 
             #region DefaultSkin
             //this creates a SkinDef with all default fields
@@ -529,13 +567,14 @@ namespace CadetMod.Cadet
                 "CadetArmor",
                 "meshButtons",
                 "CadetCoat",
-                "CadetGun",
+                "CadetGun", 
                 "CadetGunMagazine",
                 "CadetRobot",
                 "meshFur",
                 "meshLauncher",
                 "meshGrenade",
-                "meshBelt2");
+                "meshBelt2",
+                "meshShotgun");
 
             defaultSkin.gameObjectActivations = new SkinDef.GameObjectActivation[]
 {
@@ -591,6 +630,7 @@ namespace CadetMod.Cadet
                 null,
                 "meshLauncherMastery",
                 "meshGrenadeMastery",
+                null,
                 null);
 
             ////masterySkin has a new set of RendererInfos (based on default rendererinfos)
@@ -608,6 +648,7 @@ namespace CadetMod.Cadet
 
             masterySkin.rendererInfos[11].defaultMaterial = assetBundle.LoadMaterial("matCadetGunMastery");
             masterySkin.rendererInfos[12].defaultMaterial = assetBundle.LoadMaterial("matCadetGunMastery");
+            masterySkin.rendererInfos[14].defaultMaterial = assetBundle.LoadMaterial("matCadetGunMastery");
 
             ////here's a barebones example of using gameobjectactivations that could probably be streamlined or rewritten entirely, truthfully, but it works
             masterySkin.gameObjectActivations = new SkinDef.GameObjectActivation[]
@@ -634,7 +675,6 @@ namespace CadetMod.Cadet
                 }
             };
             ////simply find an object on your child locator you want to activate/deactivate and set if you want to activate/deacitvate it with this skin
-
             skins.Add(masterySkin);
 
             #endregion

@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using RoR2;
 using EntityStates;
-using RobDriver.Modules;
+using Cadet.Modules;
 using BepInEx.Configuration;
 using CadetMod.Modules;
+using CadetMod.Cadet.Content;
 
 namespace CadetMod.Cadet.SkillStates
 {
@@ -48,8 +49,36 @@ namespace CadetMod.Cadet.SkillStates
                 if (this.isGrounded) this.animator.SetFloat("airBlend", 0f);
                 else this.animator.SetFloat("airBlend", 1f);
             }
+
+            if (base.isAuthority && base.characterMotor.isGrounded)
+            {
+                this.CheckEmote<Rest>(CadetConfig.restKey);
+                this.CheckEmote<EmoteBot>(CadetConfig.emoteKey);
+            }
+        }
+        private void CheckEmote(KeyCode keybind, EntityState state)
+        {
+            if (Input.GetKeyDown(keybind))
+            {
+                if (!localUser.isUIFocused)
+                {
+                    outer.SetInterruptState(state, InterruptPriority.Any);
+                }
+            }
         }
 
+        private void CheckEmote<T>(ConfigEntry<KeyboardShortcut> keybind) where T : EntityState, new()
+        {
+            if (Modules.Config.GetKeyPressed(keybind))
+            {
+                FindLocalUser();
+
+                if (localUser != null && !localUser.isUIFocused)
+                {
+                    outer.SetInterruptState(new T(), InterruptPriority.Any);
+                }
+            }
+        }
         public override void ProcessJump()
         {
 
