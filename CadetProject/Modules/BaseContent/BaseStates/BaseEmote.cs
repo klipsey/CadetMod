@@ -145,7 +145,7 @@ namespace CadetMod.Modules.BaseStates
 
             this.characterBody.hideCrosshair = false;
 
-            base.PlayAnimation("FullBody, Override", "BufferEmpty");
+            base.PlayCrossfade("FullBody, Override", "BufferEmpty", 0.05f);
             if (this.activePlayID != 0) AkSoundEngine.StopPlayingID(this.activePlayID);
 
             base.cameraTargetParams.RemoveParamsOverride(camOverrideHandle, 0.5f);

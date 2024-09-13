@@ -55,10 +55,5 @@ namespace CadetMod
 
             //On.RoR2.Networking.NetworkManagerSystemSteam.OnClientConnect += (s, u, t) => { };
         }
-
-        private void Start()
-        {
-            SoundBanks.Init();
-        }
     }
 }

@@ -36,7 +36,7 @@ namespace CadetMod.Modules
             }
             characterModel.baseRendererInfos = prefab.GetComponentInChildren<CharacterModel>().baseRendererInfos;
 
-            Modules.Assets.ConvertAllRenderersToHopooShader(display);
+            Modules.CharacterAssets.ConvertAllRenderersToHopooShader(display);
 
             return display;
         }
@@ -310,7 +310,7 @@ namespace CadetMod.Modules
 
             characterModel.autoPopulateLightInfos = true;
             characterModel.invisibilityCount = 0;
-            characterModel.temporaryOverlays = new List<TemporaryOverlay>();
+            characterModel.temporaryOverlays = new List<TemporaryOverlayInstance>();
 
             if (!preattached)
             {

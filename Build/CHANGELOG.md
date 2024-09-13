@@ -1,3 +1,11 @@
+# 1.1.7
+
+- Fixed Ragdoll
+
+# 1.1.6
+
+- Sots
+
 # 1.1.5
 
 - Fixed base skin gun not appearing?? (why tf does it keep doing this)

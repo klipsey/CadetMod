@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 3367364344
+CRC: 2243390688
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: a5597b71decccc98add12b952a1b3fbc
+    Hash: 6369dd1fddb6caec4bac6fabd86a4eaf
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 2e2043d675c4a8ef63e7efd535f0cf3a
+    Hash: d5837bf3a179d5f3f69b4eb66f2918c7
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -44,9 +44,9 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 2334069450a65d042a95a873e5229b20, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: db294d07add6b364f99a346939dd2a8a, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: fef0780b96a0f12448b6dd86f9c8139b, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: db294d07add6b364f99a346939dd2a8a, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 136
@@ -67,107 +67,113 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 319
   Script: {instanceID: 0}
-SerializeReferenceClassIdentifiers: []
+SerializeReferenceClassIdentifiers:
+- AssemblyName: Assembly-CSharp
+  ClassName: ChildLocator/NameTransformPair
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.PersistentCallGroup
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
 Assets:
-- Assets/Cadet/Animations/animCadetCSS.controller
-- Assets/Cadet/Textures/Cadet_normal.png
-- Assets/Cadet/CadetGunAmmo.prefab
-- Assets/Cadet/Materials/matBullet.mat
-- Assets/Cadet/VFX/BloodSpurtEffect.prefab
+- Assets/Cadet/Icons/Skill/texLauncherIcon.png
+- Assets/Cadet/Textures/CadetRobot_diffuse.png
+- Assets/Cadet/Icons/Skill/texThrowIcon.png
+- Assets/Cadet/HUD/Textures/texChargeRing.png
+- Assets/Cadet/Meshes/CadetRobot.mesh
+- Assets/Cadet/Icons/Skill/texRollIcon.png
 - Assets/Cadet/HUD/ChargeBar.prefab
-- Assets/Cadet/Textures/CadetCoat_normal.png
-- Assets/Cadet/VFX/matShockwave.mat
-- Assets/Cadet/Textures/CadetWeapon_normal.png
-- Assets/Cadet/Bullet.prefab
-- Assets/Cadet/CadetDisplay.prefab
-- Assets/Cadet/VFX/Badass/BigExplosion.prefab
 - Assets/Cadet/Meshes/meshRobotMastery.mesh
-- Assets/Cadet/VFX/Badass/MetalHitEffect.prefab
+- Assets/Cadet/Animations/animCadet.controller
+- Assets/Cadet/Meshes/meshBackpackStrap.mesh
+- Assets/Cadet/cadet_emoteskeleton.prefab
 - Assets/Cadet/Meshes/meshBelt2.mesh
-- Assets/Cadet/HUD/Textures/texBulletIndicator.png
-- Assets/Cadet/Textures/texCadetGunMasterEm.png
-- Assets/Cadet/Materials/matCadetRobotMastery.mat
-- Assets/Cadet/Meshes/meshButtons.mesh
-- Assets/Cadet/VFX/matShockwave2.mat
+- Assets/Cadet/Textures/Cadet_normal.png
+- Assets/Cadet/Meshes/meshGunMagMastery.mesh
+- Assets/Cadet/HUD/Textures/texSniperBulletIndicator.png
+- Assets/Cadet/Icons/texMasterySkin.png
+- Assets/Cadet/Icons/Skill/texEchoIcon.png
+- Assets/Cadet/Materials/matBulletMastery.mat
+- Assets/Cadet/VFX/BloodSpurtEffect.prefab
+- Assets/Cadet/Meshes/meshGrenade.mesh
+- Assets/Cadet/Meshes/CadetArmor.mesh
 - Assets/Cadet/Textures/Cadet_diffuse.png
-- Assets/Cadet/Icons/Skill/texSMGIcon.png
-- Assets/Cadet/VFX/Badass/StoneHitEffect.prefab
-- Assets/Cadet/Meshes/meshLauncher.mesh
+- Assets/Cadet/Materials/matCadetCoatMastery.mat
+- Assets/Cadet/VFX/Badass/WoodHitEffect.prefab
+- Assets/Cadet/Meshes/meshBelt.mesh
+- Assets/Cadet/Meshes/meshGunMastery.mesh
+- Assets/Cadet/Textures/texCadetMasteryNormal.png
+- Assets/Cadet/Icons/texDefaultSkin.png
+- Assets/Cadet/Meshes/meshShotgun.mesh
+- Assets/Cadet/VFX/texShockwave.png
+- Assets/Cadet/VFX/Badass/TinyExplosion.prefab
+- Assets/Cadet/Textures/CadetRobot_normal.png
+- Assets/Cadet/Textures/texCadetRobotMasteryEmission.png
 - Assets/Cadet/Animations/maskCadetAim.mask
+- Assets/Cadet/Icons/Skill/texShotgunSpecialIcon.png
+- Assets/Cadet/Textures/CadetCoat_normal.png
+- Assets/Cadet/Textures/texCadetCoatMasteryNormal.png
+- Assets/Cadet/VFX/Badass/SmallExplosion.prefab
+- Assets/Cadet/Meshes/meshCoatMastery.mesh
+- Assets/Cadet/Textures/texCadetGunMastery.png
+- Assets/Cadet/CadetMagAmmo.prefab
+- Assets/Cadet/Meshes/meshButtons.mesh
+- Assets/Cadet/Meshes/meshGrenadeMastery.mesh
+- Assets/Cadet/Icons/texCadetIcon.png
+- Assets/Cadet/Meshes/CadetGun.mesh
+- Assets/Cadet/Textures/texCadetCoatMasteryDiffuse.png
+- Assets/Cadet/Meshes/CadetCoat.mesh
+- Assets/Cadet/CadetGunAmmo.prefab
+- Assets/Cadet/Textures/texCadetGunMasterEm.png
+- Assets/Cadet/CadetDisplay.prefab
+- Assets/Cadet/Materials/matCadetGunMastery.mat
+- Assets/Cadet/Projectiles/CadetGrenadeGhost.prefab
+- Assets/Cadet/Icons/Skill/texShotgunIcon.png
+- Assets/Cadet/Meshes/meshFur.mesh
+- Assets/Cadet/VFX/matShockwave2.mat
+- Assets/Cadet/Meshes/meshArmorMastery.mesh
+- Assets/Cadet/Icons/Skill/texSMGIcon.png
+- Assets/Cadet/HUD/ChargeRing.prefab
 - Assets/Cadet/Materials/matCadetGun.mat
 - Assets/Cadet/Textures/texCadetMasteryDiffuse.png
-- Assets/Cadet/Meshes/meshCadetMastery.mesh
-- Assets/Cadet/Icons/texMasterySkin.png
-- Assets/Cadet/Textures/texCadetCoatMasteryDiffuse.png
-- Assets/Cadet/Icons/CadetFinal.png
-- Assets/Cadet/Meshes/CadetGun.mesh
-- Assets/Cadet/Animations/animCadet.controller
-- Assets/Cadet/Icons/Skill/texRollIcon.png
-- Assets/Cadet/Meshes/meshBeltMastery.mesh
-- Assets/Cadet/Meshes/CadetGunMagazine.mesh
-- Assets/Cadet/Meshes/meshBackpackMastery.mesh
-- Assets/Cadet/Icons/Skill/texLauncherIcon.png
-- Assets/Cadet/Icons/Skill/texEchoIcon.png
-- Assets/Cadet/Icons/texBuffSyringe.png
-- Assets/Cadet/Textures/texCadetGunMastery.png
-- Assets/Cadet/VFX/texShockwave.png
-- Assets/Cadet/Meshes/CadetArmor.mesh
-- Assets/Cadet/Materials/matCadetCoat.mat
-- Assets/Cadet/Meshes/meshGrenade.mesh
-- Assets/Cadet/Textures/texCadetCoatMasteryNormal.png
-- Assets/Cadet/Textures/CadetRobot_emission.png
-- Assets/Cadet/Icons/Skill/texThrowIcon.png
-- Assets/Cadet/Meshes/meshCoatMastery.mesh
-- Assets/Cadet/Textures/texCadetMasteryEmission.png
-- Assets/Cadet/Meshes/meshGunMastery.mesh
-- Assets/Cadet/Textures/CadetWeapon_emission.png
-- Assets/Cadet/HUD/WeaponChargeBar.prefab
-- Assets/Cadet/Icons/texCadetIcon.png
-- Assets/Cadet/Meshes/meshArmorMastery.mesh
-- Assets/Cadet/Meshes/meshBackpack.mesh
-- Assets/Cadet/Meshes/meshButtonsMastery.mesh
-- Assets/Cadet/Meshes/meshBelt.mesh
-- Assets/Cadet/Icons/Skill/texShotgunIcon.png
-- Assets/Cadet/Materials/matCadet.mat
-- Assets/Cadet/Icons/texDefaultSkin.png
-- Assets/Cadet/VFX/Badass/TinyExplosion.prefab
-- Assets/Cadet/VFX/Badass/SandHitEffect.prefab
-- Assets/Cadet/HUD/ChargeRing.prefab
 - Assets/Cadet/VFX/DiscardEffect.prefab
-- Assets/Cadet/Projectiles/CadetGrenadeGhost.prefab
-- Assets/Cadet/Textures/texCadetMasteryNormal.png
-- Assets/Cadet/Textures/CadetRobot_normal.png
-- Assets/Cadet/Materials/matCadetBot.mat
-- Assets/Cadet/Animations/animCadetEmotes.controller
-- Assets/Cadet/Animations/maskCadetLeftArm.mask
-- Assets/Cadet/Meshes/meshBackpackStrap.mesh
-- Assets/Cadet/Textures/texCadetRobotMasteryDiffuse.png
-- Assets/Cadet/HUD/Textures/texChargeRing.png
-- Assets/Cadet/Meshes/meshLauncherMastery.mesh
-- Assets/Cadet/Meshes/meshGrenadeMastery.mesh
-- Assets/Cadet/Meshes/CadetCoat.mesh
-- Assets/Cadet/CadetMagAmmo.prefab
-- Assets/Cadet/Materials/matBulletMastery.mat
-- Assets/Cadet/Icons/Skill/texSlideIcon.png
-- Assets/Cadet/Icons/Skill/texShotgunSpecialIcon.png
-- Assets/Cadet/Textures/CadetWeapon_diffuse.png
-- Assets/Cadet/Textures/CadetCoat_diffuse.png
-- Assets/Cadet/VFX/Badass/WoodHitEffect.prefab
-- Assets/Cadet/VFX/Badass/SmallExplosion.prefab
-- Assets/Cadet/Textures/CadetRobot_diffuse.png
-- Assets/Cadet/Meshes/meshGunMagMastery.mesh
-- Assets/Cadet/Meshes/meshShotgun.mesh
-- Assets/Cadet/cadet_emoteskeleton.prefab
-- Assets/Cadet/Meshes/CadetRobot.mesh
-- Assets/Cadet/mdlCadet.prefab
-- Assets/Cadet/HUD/Textures/texSniperBulletIndicator.png
 - Assets/Cadet/Materials/matCadetMastery.mat
 - Assets/Cadet/Animations/maskCadetImpact.mask
-- Assets/Cadet/Meshes/meshFur.mesh
-- Assets/Cadet/Meshes/Cadet.mesh
-- Assets/Cadet/Materials/matCadetCoatMastery.mat
-- Assets/Cadet/Textures/texCadetRobotMasteryEmission.png
-- Assets/Cadet/Animations/maskCadetGesture.mask
-- Assets/Cadet/Materials/matCadetGunMastery.mat
+- Assets/Cadet/VFX/Badass/BigExplosion.prefab
 - Assets/Cadet/HUD/Textures/texWhite.png
+- Assets/Cadet/Textures/CadetWeapon_emission.png
+- Assets/Cadet/Textures/CadetCoat_diffuse.png
+- Assets/Cadet/Bullet.prefab
+- Assets/Cadet/HUD/Textures/texBulletIndicator.png
+- Assets/Cadet/Textures/CadetWeapon_normal.png
+- Assets/Cadet/Textures/CadetRobot_emission.png
+- Assets/Cadet/Icons/CadetFinal.png
+- Assets/Cadet/Meshes/meshLauncher.mesh
+- Assets/Cadet/Icons/Skill/texSlideIcon.png
+- Assets/Cadet/Meshes/Cadet.mesh
+- Assets/Cadet/VFX/Badass/MetalHitEffect.prefab
+- Assets/Cadet/VFX/Badass/SandHitEffect.prefab
+- Assets/Cadet/Meshes/meshBackpack.mesh
+- Assets/Cadet/Animations/animCadetCSS.controller
+- Assets/Cadet/Textures/CadetWeapon_diffuse.png
+- Assets/Cadet/Materials/matBullet.mat
+- Assets/Cadet/Meshes/meshCadetMastery.mesh
+- Assets/Cadet/Textures/texCadetRobotMasteryDiffuse.png
+- Assets/Cadet/VFX/Badass/StoneHitEffect.prefab
+- Assets/Cadet/Materials/matCadet.mat
+- Assets/Cadet/Materials/matCadetCoat.mat
+- Assets/Cadet/Meshes/meshBackpackMastery.mesh
+- Assets/Cadet/Animations/maskCadetLeftArm.mask
+- Assets/Cadet/Meshes/meshButtonsMastery.mesh
+- Assets/Cadet/Textures/texCadetMasteryEmission.png
+- Assets/Cadet/Materials/matCadetRobotMastery.mat
+- Assets/Cadet/Meshes/meshBeltMastery.mesh
+- Assets/Cadet/VFX/matShockwave.mat
+- Assets/Cadet/Icons/texBuffSyringe.png
+- Assets/Cadet/Meshes/meshLauncherMastery.mesh
+- Assets/Cadet/Animations/maskCadetGesture.mask
+- Assets/Cadet/HUD/WeaponChargeBar.prefab
+- Assets/Cadet/mdlCadet.prefab
+- Assets/Cadet/Meshes/CadetGunMagazine.mesh
+- Assets/Cadet/Animations/animCadetEmotes.controller
+- Assets/Cadet/Materials/matCadetBot.mat
 Dependencies: []

@@ -33,7 +33,7 @@ namespace CadetMod.Modules.Characters
         public virtual void Initialize()
         {
             instance = this as T;
-            assetBundle = Assets.LoadAssetBundle("cadet");
+            assetBundle = CharacterAssets.LoadAssetBundle(assetBundleName);
 
             InitializeCharacter();
         }
