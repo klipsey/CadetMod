@@ -62,19 +62,26 @@ namespace CadetMod.Cadet.Content
 
             #region Primary
             Language.Add(prefix + "PRIMARY_SMG_NAME", "Bullet Storm");
-            Language.Add(prefix + "PRIMARY_SMG_DESCRIPTION", $"{Tokens.agilePrefix}. Fire a laser for <style=cIsDamage>{100f * CadetStaticValues.smgDamageCoefficient}% damage</style>. Requires a <style=cIsUtility>reload</style> after <style=cIsDamage>{CadetStaticValues.baseSMGMaxAmmo}</style> bullets.");
+            Language.Add(prefix + "PRIMARY_SMG_DESCRIPTION", $"{Tokens.agilePrefix}. " +
+                $"Fire a laser for <style=cIsDamage>{100f * CadetConfig.smgDamageCoefficient.Value}% damage</style>. " +
+                $"Requires a <style=cIsUtility>reload</style> after <style=cIsDamage>{CadetConfig.baseSMGMaxAmmo.Value}</style> bullets.");
 
             Language.Add(prefix + "PRIMARY_SHOTGUN_NAME", "Crashing Tides");
-            Language.Add(prefix + "PRIMARY_SHOTGUN_DESCRIPTION", $"{Tokens.agilePrefix}. Fire a burst for <style=cIsDamage>3x{100f * CadetStaticValues.shotgunDamageCoefficient}% damage</style>. Requires a <style=cIsUtility>reload</style> after <style=cIsDamage>{CadetStaticValues.baseShotgunMaxAmmo}</style> bullets.");
+            Language.Add(prefix + "PRIMARY_SHOTGUN_DESCRIPTION", $"{Tokens.agilePrefix}. " +
+                $"Fire a burst for <style=cIsDamage>3x{100f * CadetConfig.shotgunDamageCoefficient.Value}% damage</style>. " +
+                $"Requires a <style=cIsUtility>reload</style> after <style=cIsDamage>{CadetConfig.baseShotgunMaxAmmo.Value}</style> bullets.");
 
             #endregion
 
             #region Secondary
             Language.Add(prefix + "SECONDARY_THROWGUN_NAME", "Plan C");
-            Language.Add(prefix + "SECONDARY_THROWGUN_DESCRIPTION", $"Throw your gun dealing <style=cIsDamage>{100f * CadetStaticValues.throwGunDamageCoefficient} - {100f * 7.5f}% damage</style> based on your current ammo.");
+            Language.Add(prefix + "SECONDARY_THROWGUN_DESCRIPTION", 
+                $"Throw your gun dealing <style=cIsDamage>{100f * CadetConfig.throwGunDamageCoefficient.Value} - " +
+                $"{100f * CadetConfig.throwGunMaxDamageCoefficient.Value}% damage</style> based on your current ammo.");
 
             Language.Add(prefix + "SECONDARY_GRENADE_NAME", "Plan B");
-            Language.Add(prefix + "SECONDARY_GRENADE_DESCRIPTION", $"Fire your lightweight grenade launcher dealing <style=cIsDamage>{100f * CadetStaticValues.grenadeDamageCoefficient}% damage</style>.");
+            Language.Add(prefix + "SECONDARY_GRENADE_DESCRIPTION", $"Fire your lightweight grenade launcher dealing " +
+                $"<style=cIsDamage>{100f * CadetConfig.grenadeDamageCoefficient.Value}% damage</style>.");
 
             #endregion
 
@@ -88,10 +95,13 @@ namespace CadetMod.Cadet.Content
 
             #region Special
             Language.Add(prefix + "SPECIAL_ULTRA_NAME", "Plan A");
-            Language.Add(prefix + "SPECIAL_ULTRA_DESCRIPTION", $"{Tokens.agilePrefix}. Fire a heavy burst of pellets, dealing <style=cIsDamage>{UltraShotgun.bulletCount}x{100f * UltraShotgun.damageCoefficient}% damage</style>.");
+            Language.Add(prefix + "SPECIAL_ULTRA_DESCRIPTION", $"{Tokens.agilePrefix}. Fire a heavy burst of pellets, dealing " +
+                $"<style=cIsDamage>{CadetConfig.superShotgunPelletCount.Value}x{100f * CadetConfig.superShotgunDamageCoefficient.Value}% damage</style>.");
 
             Language.Add(prefix + "SPECIAL_ECHO_NAME", "Echo Drones");
-            Language.Add(prefix + "SPECIAL_ECHO_DESCRIPTION", $"Fabricate <style=cIsDamage>two drones</style> that seek out nearby enemies dealing <style=cIsDamage>2x{100f * 3.5f}% damage</style>.");
+            Language.Add(prefix + "SPECIAL_ECHO_DESCRIPTION", $"Fabricate " +
+                $"<style=cIsDamage>two drones</style> that seek out nearby enemies dealing " +
+                $"<style=cIsDamage>2x{100f * CadetConfig.echoDronesDamageCoefficient.Value}% damage</style>.");
             #endregion
 
             #region Achievements

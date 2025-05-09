@@ -8,11 +8,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using RoR2.UI;
-using R2API;
-using UnityEngine.AddressableAssets;
-using UnityEngine.Networking;
-using UnityEngine.UI;
-using R2API.Networking;
 using CadetMod.Cadet.Components;
 using CadetMod.Cadet.Content;
 using CadetMod.Cadet.SkillStates;
@@ -51,13 +46,27 @@ namespace CadetMod.Cadet
             crosshair = Modules.CharacterAssets.LoadCrosshair("Bandit2"),
             podPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/NetworkedObjects/SurvivorPod"),
 
-            maxHealth = 110f,
-            healthRegen = 1f,
-            armor = 0f,
-            damage = 12f,
-            damageGrowth = 2.4f,
-
-            jumpCount = 1,
+            damage = CadetConfig.damage.Value,
+            damageGrowth = CadetConfig.damageGrowth.Value * CadetConfig.damage.Value,
+            attackSpeed = CadetConfig.attackSpeed.Value,
+            attackSpeedGrowth = CadetConfig.attackSpeedGrowth.Value,
+            crit = CadetConfig.crit.Value,
+            critGrowth = CadetConfig.critGrowth.Value,
+            maxHealth = CadetConfig.maxHealth.Value,
+            healthGrowth = CadetConfig.healthGrowth.Value * CadetConfig.maxHealth.Value,
+            healthRegen = CadetConfig.healthRegen.Value,
+            regenGrowth = CadetConfig.regenGrowth.Value * CadetConfig.healthRegen.Value,
+            shield = CadetConfig.shield.Value,
+            shieldGrowth = CadetConfig.shieldGrowth.Value * CadetConfig.shield.Value,
+            armor = CadetConfig.armor.Value,
+            armorGrowth = CadetConfig.armorGrowth.Value * CadetConfig.armor.Value,
+            moveSpeed = CadetConfig.moveSpeed.Value,
+            moveSpeedGrowth = CadetConfig.moveSpeedGrowth.Value * CadetConfig.moveSpeed.Value,
+            jumpPower = CadetConfig.jumpPower.Value,
+            jumpPowerGrowth = CadetConfig.jumpPowerGrowth.Value * CadetConfig.jumpPower.Value,
+            acceleration = CadetConfig.acceleration.Value,
+            jumpCount = CadetConfig.jumpCount.Value,
+            autoCalculateLevelStats = CadetConfig.autoCalculateLevelStats.Value,
         };
 
         public override UnlockableDef characterUnlockableDef => CadetUnlockables.characterUnlockableDef;
@@ -202,7 +211,7 @@ namespace CadetMod.Cadet
                 interruptPriority = EntityStates.InterruptPriority.Skill,
 
                 baseRechargeInterval = 0f,
-                baseMaxStock = CadetStaticValues.baseSMGMaxAmmo,
+                baseMaxStock = CadetConfig.baseSMGMaxAmmo.Value,
 
                 rechargeStock = 0,
                 requiredStock = 1,
@@ -238,7 +247,7 @@ namespace CadetMod.Cadet
                 interruptPriority = EntityStates.InterruptPriority.Skill,
 
                 baseRechargeInterval = 0f,
-                baseMaxStock = CadetStaticValues.baseShotgunMaxAmmo,
+                baseMaxStock = CadetConfig.baseShotgunMaxAmmo.Value,
 
                 rechargeStock = 0,
                 requiredStock = 1,

@@ -13,7 +13,7 @@ namespace CadetMod.Cadet.SkillStates
 {
     public class Shotgun : BaseCadetSkillState
     {
-        public static float damageCoefficient = CadetStaticValues.shotgunDamageCoefficient;
+        public static float damageCoefficient = CadetConfig.shotgunDamageCoefficient.Value;
         public static float procCoefficient = 0.7f;
         public static float baseDuration = 0.25f;
         public static float force = 200f;
@@ -102,6 +102,8 @@ namespace CadetMod.Cadet.SkillStates
                     hitEffectPrefab = EntityStates.Commando.CommandoWeapon.FireBarrage.hitEffectPrefab,
                     HitEffectNormal = false,
                 };
+
+                bulletAttack.damageType.damageSource = DamageSource.Primary;
 
                 cadetController.ammo--;
                 cadetController.onAmmoChange?.Invoke();

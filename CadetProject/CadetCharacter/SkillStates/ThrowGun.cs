@@ -6,6 +6,7 @@ using RoR2.Projectile;
 using CadetMod.Cadet.Content;
 using CadetMod.Cadet.Components;
 using R2API;
+using UnityEngine.Diagnostics;
 
 namespace CadetMod.Cadet.SkillStates
 {
@@ -48,7 +49,12 @@ namespace CadetMod.Cadet.SkillStates
                 Ray aimRay = base.GetAimRay();
                 aimRay = this.ModifyProjectileAimRay(aimRay);
                 aimRay.direction = Util.ApplySpread(aimRay.direction, 0f, 0f, 1f, 1f, 0f, this.projectilePitchBonus);
-                ProjectileManager.instance.FireProjectile(gun, aimRay.origin, Util.QuaternionSafeLookRotation(aimRay.direction), this.gameObject, this.damageStat * CadetStaticValues.throwGunDamageCoefficient + this.damageStat * (((float)cadetController.ammo / (float)cadetController.maxAmmo) * 5f), this.force, this.RollCrit(), DamageColorIndex.Default, null, -1f);
+                ProjectileManager.instance.FireProjectile(gun, aimRay.origin, Util.QuaternionSafeLookRotation(aimRay.direction), this.gameObject, 
+                    this.damageStat * Mathf.Lerp(CadetConfig.throwGunDamageCoefficient.Value, 
+                    CadetConfig.throwGunMaxDamageCoefficient.Value, 
+                    cadetController.ammo / cadetController.maxAmmo),
+                    this.force, this.RollCrit(), DamageColorIndex.Default, null, -1f);
+
                 skillLocator.primary.RemoveAllStocks();
                 cadetController.ammo = 0;
                 cadetController.onAmmoChange?.Invoke();

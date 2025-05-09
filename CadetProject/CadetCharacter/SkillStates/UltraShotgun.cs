@@ -14,10 +14,8 @@ namespace CadetMod.Cadet.SkillStates
     {
         public const float RAD2 = 1.414f;
 
-        public static float damageCoefficient = 0.5f;
         public static float procCoefficient = 0.5f;
         public float baseDuration = 0.9f; 
-        public static int bulletCount = 32;
         public static float bulletSpread = 8f;
         public static float bulletRecoil = 40f;
         public static float bulletRange = 150f;
@@ -79,7 +77,7 @@ namespace CadetMod.Cadet.SkillStates
 
                 if (base.isAuthority)
                 {
-                    float damage = UltraShotgun.damageCoefficient * this.damageStat;
+                    float damage = CadetConfig.superShotgunDamageCoefficient.Value * this.damageStat;
 
                     Ray aimRay = GetAimRay();
 
@@ -118,12 +116,14 @@ namespace CadetMod.Cadet.SkillStates
                         HitEffectNormal = false,
                     };
 
+                    bulletAttack.damageType.damageSource = DamageSource.Secondary;
+
                     bulletAttack.minSpread = 0;
                     bulletAttack.maxSpread = 0;
                     bulletAttack.bulletCount = 1;
                     bulletAttack.Fire();
 
-                    uint secondShot = (uint)Mathf.CeilToInt(bulletCount / 2f) - 1;
+                    uint secondShot = (uint)Mathf.CeilToInt(CadetConfig.superShotgunPelletCount.Value / 2f) - 1;
                     bulletAttack.minSpread = 0;
                     bulletAttack.maxSpread = spread / 1.45f;
                     bulletAttack.bulletCount = secondShot;
@@ -131,7 +131,7 @@ namespace CadetMod.Cadet.SkillStates
 
                     bulletAttack.minSpread = spread / 1.45f;
                     bulletAttack.maxSpread = spread;
-                    bulletAttack.bulletCount = (uint)Mathf.FloorToInt(bulletCount / 2f);
+                    bulletAttack.bulletCount = (uint)Mathf.FloorToInt(CadetConfig.superShotgunPelletCount.Value / 2f);
                     bulletAttack.Fire();
 
                     float x = this.selfForce;

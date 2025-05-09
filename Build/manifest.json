@@ -1,22 +1,23 @@
 {
     "name": "Cadet",
     "author": "tsuyoikenko",
-    "version_number": "1.1.7",
+    "version_number": "1.1.8",
     "website_url": "https://github.com/klipsey/CadetMod",
-    "description": "Revives the Cadet Survivor from the Tsunami Mod. The pac is bac baby. Sots fixes.",
+    "description": "Revives the Cadet Survivor from the Tsunami Mod.",
     "dependencies": [
         "bbepis-BepInExPack-5.4.2117",
-	"RiskofThunder-R2API_TempVisualEffect-1.0.2",
-        "RiskofThunder-R2API_Dot-1.0.1",
+	"RiskofThunder-R2API_TempVisualEffect-1.0.3",
+        "RiskofThunder-R2API_Dot-1.0.4",
         "RiskofThunder-R2API_Orb-1.0.1",
-	"RiskofThunder-R2API_Networking-1.0.2",
-	"RiskofThunder-HookGenPatcher-1.2.4",
-	"RiskofThunder-R2API_Core-5.1.1",
+	"RiskofThunder-R2API_Networking-1.0.3",
+	"RiskofThunder-HookGenPatcher-1.2.5",
+	"RiskofThunder-R2API_Core-5.1.5",
 	"RiskofThunder-R2API_Prefab-1.0.4",
 	"RiskofThunder-R2API_Language-1.0.1",
 	"RiskofThunder-R2API_Sound-1.0.3",
-	"RiskofThunder-R2API_RecalculateStats-1.4.0",
-	"RiskofThunder-R2API_DamageType-1.1.1",
-	"RiskofThunder-RoR2BepInExPack-1.19.0"
+	"RiskofThunder-R2API_RecalculateStats-1.5.0",
+	"RiskofThunder-R2API_DamageType-1.1.7",
+	"RiskofThunder-R2API_Skins-1.2.0",
+	"RiskofThunder-RoR2BepInExPack-1.26.0"
     ]
 }

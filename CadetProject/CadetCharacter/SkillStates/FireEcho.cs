@@ -12,7 +12,6 @@ namespace CadetMod.Cadet.SkillStates
 {
     public class FireEcho : BaseCadetSkillState
     {
-        private float damageCoefficient = 3.8f;
         private float duration = 1.25f;
         private bool hasFired2;
         private GameObject projectilePrefab = CadetAssets.echoDrones;
@@ -46,7 +45,9 @@ namespace CadetMod.Cadet.SkillStates
         {
             if(base.isAuthority)
             {
-                ProjectileManager.instance.FireProjectile(projectilePrefab, FindModelChild("Robo").position, Util.QuaternionSafeLookRotation(GetAimRay().direction), this.gameObject, characterBody.damage * damageCoefficient, 400f, this.RollCrit(), DamageColorIndex.Default, null, -1f);
+                ProjectileManager.instance.FireProjectile(projectilePrefab, FindModelChild("Robo").position, 
+                    Util.QuaternionSafeLookRotation(GetAimRay().direction), this.gameObject, 
+                    characterBody.damage * CadetConfig.echoDronesDamageCoefficient.Value, 400f, this.RollCrit(), DamageColorIndex.Default, null, -1f);
             }
         }
 

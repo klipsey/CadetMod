@@ -240,6 +240,7 @@ namespace CadetMod.Cadet.Content
             pie.blastProcCoefficient = 1f;
 
             gunPrefab.GetComponent<ProjectileDamage>().damageType = DamageType.Stun1s;
+            gunPrefab.GetComponent<ProjectileDamage>().damageType.damageSource = DamageSource.Secondary;
 
             gunPrefab.GetComponent<ProjectileSimple>().desiredForwardSpeed = 120f;
 
@@ -268,6 +269,8 @@ namespace CadetMod.Cadet.Content
             grenadePrefab = PrefabAPI.InstantiateClone(Resources.Load<GameObject>("Prefabs/Projectiles/" + "CommandoGrenadeProjectile"), "CadetGrenade");
             if (!grenadePrefab.GetComponent<NetworkIdentity>()) grenadePrefab.AddComponent<NetworkIdentity>();
             grenadePrefab.AddComponent<RocketRotation>();
+
+            grenadePrefab.GetComponent<ProjectileDamage>().damageType.damageSource = DamageSource.Secondary;
 
             grenadePrefab.transform.localScale *= 2f;
 
@@ -305,8 +308,10 @@ namespace CadetMod.Cadet.Content
             Modules.Content.AddProjectilePrefab(grenadePrefab);
 
             echoDrones = PrefabAPI.InstantiateClone(LegacyResourcesAPI.Load<GameObject>("Prefabs/Projectiles/EchoHunterProjectile"), "CadetDrones");
-            echoDrones.GetComponent<ProjectileDamage>().damageType = DamageType.SlowOnHit;
-            echoDrones.GetComponent<ProjectileSimple>().desiredForwardSpeed = 160f;
+            var projDam = echoDrones.GetComponent<ProjectileDamage>();
+            var projDamType = projDam.damageType = DamageType.SlowOnHit;
+            projDamType.damageSource = DamageSource.Special;
+            var projSimp = echoDrones.GetComponent<ProjectileSimple>().desiredForwardSpeed = 400f;
 
             Modules.Content.AddProjectilePrefab(echoDrones);
         }
