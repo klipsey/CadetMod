@@ -1,7 +1,7 @@
 {
     "name": "Cadet",
     "author": "tsuyoikenko",
-    "version_number": "1.1.8",
+    "version_number": "1.1.9",
     "website_url": "https://github.com/klipsey/CadetMod",
     "description": "Revives the Cadet Survivor from the Tsunami Mod.",
     "dependencies": [
@@ -18,6 +18,7 @@
 	"RiskofThunder-R2API_RecalculateStats-1.5.0",
 	"RiskofThunder-R2API_DamageType-1.1.7",
 	"RiskofThunder-R2API_Skins-1.2.0",
-	"RiskofThunder-RoR2BepInExPack-1.26.0"
+	"RiskofThunder-RoR2BepInExPack-1.26.0",
+	"pseudopulse-SoundFixer-1.0.0"
     ]
 }

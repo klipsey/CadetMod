@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "D:\\RoR2Mods\\CadetMod\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2F3EA515-2120-4C47-B861-2C78E76B88D6}|CadetProject\\CadetMod.csproj|d:\\ror2mods\\cadetmod\\cadetproject\\modules\\prefabs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F3EA515-2120-4C47-B861-2C78E76B88D6}|CadetProject\\CadetMod.csproj|solutionrelative:cadetproject\\modules\\prefabs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F3EA515-2120-4C47-B861-2C78E76B88D6}|CadetProject\\CadetMod.csproj|d:\\ror2mods\\cadetmod\\cadetproject\\cadetcharacter\\content\\cadetassets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F3EA515-2120-4C47-B861-2C78E76B88D6}|CadetProject\\CadetMod.csproj|solutionrelative:cadetproject\\cadetcharacter\\content\\cadetassets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F3EA515-2120-4C47-B861-2C78E76B88D6}|CadetProject\\CadetMod.csproj|d:\\ror2mods\\cadetmod\\cadetproject\\cadetmod.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{2F3EA515-2120-4C47-B861-2C78E76B88D6}|CadetProject\\CadetMod.csproj|solutionrelative:cadetproject\\cadetmod.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2F3EA515-2120-4C47-B861-2C78E76B88D6}|CadetProject\\CadetMod.csproj|d:\\ror2mods\\cadetmod\\cadetproject\\cadetcharacter\\skillstates\\throwgun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2F3EA515-2120-4C47-B861-2C78E76B88D6}|CadetProject\\CadetMod.csproj|solutionrelative:cadetproject\\cadetcharacter\\skillstates\\throwgun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,10 +27,6 @@
       "RelativeMoniker": "D:0:0:{2F3EA515-2120-4C47-B861-2C78E76B88D6}|CadetProject\\CadetMod.csproj|solutionrelative:cadetproject\\cadetcharacter\\cadetsurvivor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F3EA515-2120-4C47-B861-2C78E76B88D6}|CadetProject\\CadetMod.csproj|d:\\ror2mods\\cadetmod\\cadetproject\\cadetmod.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{2F3EA515-2120-4C47-B861-2C78E76B88D6}|CadetProject\\CadetMod.csproj|solutionrelative:cadetproject\\cadetmod.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2F3EA515-2120-4C47-B861-2C78E76B88D6}|CadetProject\\CadetMod.csproj|d:\\ror2mods\\cadetmod\\cadetproject\\cadetcharacter\\skillstates\\ultrashotgun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2F3EA515-2120-4C47-B861-2C78E76B88D6}|CadetProject\\CadetMod.csproj|solutionrelative:cadetproject\\cadetcharacter\\skillstates\\ultrashotgun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -29,10 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{2F3EA515-2120-4C47-B861-2C78E76B88D6}|CadetProject\\CadetMod.csproj|d:\\ror2mods\\cadetmod\\cadetproject\\cadetcharacter\\skillstates\\grenadelauncher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2F3EA515-2120-4C47-B861-2C78E76B88D6}|CadetProject\\CadetMod.csproj|solutionrelative:cadetproject\\cadetcharacter\\skillstates\\grenadelauncher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F3EA515-2120-4C47-B861-2C78E76B88D6}|CadetProject\\CadetMod.csproj|d:\\ror2mods\\cadetmod\\cadetproject\\cadetcharacter\\content\\cadetassets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F3EA515-2120-4C47-B861-2C78E76B88D6}|CadetProject\\CadetMod.csproj|solutionrelative:cadetproject\\cadetcharacter\\content\\cadetassets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2F3EA515-2120-4C47-B861-2C78E76B88D6}|CadetProject\\CadetMod.csproj|d:\\ror2mods\\cadetmod\\cadetproject\\cadetcharacter\\skillstates\\shotgun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -106,7 +110,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 30,
+          "SelectedChildIndex": 22,
           "Children": [
             {
               "$type": "Bookmark",
@@ -198,7 +202,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 0,
+              "Title": "Prefabs.cs",
+              "DocumentMoniker": "D:\\RoR2Mods\\CadetMod\\CadetProject\\Modules\\Prefabs.cs",
+              "RelativeDocumentMoniker": "CadetProject\\Modules\\Prefabs.cs",
+              "ToolTip": "D:\\RoR2Mods\\CadetMod\\CadetProject\\Modules\\Prefabs.cs",
+              "RelativeToolTip": "CadetProject\\Modules\\Prefabs.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAvwFwCAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T05:55:45.254Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "Shotgun.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\CadetMod\\CadetProject\\CadetCharacter\\SkillStates\\Shotgun.cs",
               "RelativeDocumentMoniker": "CadetProject\\CadetCharacter\\SkillStates\\Shotgun.cs",
@@ -206,11 +223,12 @@
               "RelativeToolTip": "CadetProject\\CadetCharacter\\SkillStates\\Shotgun.cs",
               "ViewState": "AgIAAFMAAAAAAAAAAAAuwGoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T20:58:01.046Z"
+              "WhenOpened": "2025-05-09T20:58:01.046Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "FireEcho.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\CadetMod\\CadetProject\\CadetCharacter\\SkillStates\\FireEcho.cs",
               "RelativeDocumentMoniker": "CadetProject\\CadetCharacter\\SkillStates\\FireEcho.cs",
@@ -218,11 +236,12 @@
               "RelativeToolTip": "CadetProject\\CadetCharacter\\SkillStates\\FireEcho.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAAAowCwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T20:58:01.025Z"
+              "WhenOpened": "2025-05-09T20:58:01.025Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "UltraShotgun.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\CadetMod\\CadetProject\\CadetCharacter\\SkillStates\\UltraShotgun.cs",
               "RelativeDocumentMoniker": "CadetProject\\CadetCharacter\\SkillStates\\UltraShotgun.cs",
@@ -235,7 +254,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "CadetTokens.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\CadetMod\\CadetProject\\CadetCharacter\\Content\\CadetTokens.cs",
               "RelativeDocumentMoniker": "CadetProject\\CadetCharacter\\Content\\CadetTokens.cs",
@@ -243,24 +262,25 @@
               "RelativeToolTip": "CadetProject\\CadetCharacter\\Content\\CadetTokens.cs",
               "ViewState": "AgIAAE8AAAAAAAAAAAAiwGUAAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:06:02.85Z"
+              "WhenOpened": "2025-05-09T21:06:02.85Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "CadetMod.csproj",
               "DocumentMoniker": "D:\\RoR2Mods\\CadetMod\\CadetProject\\CadetMod.csproj",
               "RelativeDocumentMoniker": "CadetProject\\CadetMod.csproj",
               "ToolTip": "D:\\RoR2Mods\\CadetMod\\CadetProject\\CadetMod.csproj",
               "RelativeToolTip": "CadetProject\\CadetMod.csproj",
-              "ViewState": "AgIAADMAAAAAAAAAAAAowEcAAABCBAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAowBIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-05-09T20:58:00.944Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "DamageTypes.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\CadetMod\\CadetProject\\CadetCharacter\\Content\\DamageTypes.cs",
               "RelativeDocumentMoniker": "CadetProject\\CadetCharacter\\Content\\DamageTypes.cs",
@@ -268,11 +288,12 @@
               "RelativeToolTip": "CadetProject\\CadetCharacter\\Content\\DamageTypes.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:24:05.36Z"
+              "WhenOpened": "2025-05-09T21:24:05.36Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "BaseMeleeAttack.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\CadetMod\\CadetProject\\Modules\\BaseContent\\BaseStates\\BaseMeleeAttack.cs",
               "RelativeDocumentMoniker": "CadetProject\\Modules\\BaseContent\\BaseStates\\BaseMeleeAttack.cs",
@@ -280,11 +301,12 @@
               "RelativeToolTip": "CadetProject\\Modules\\BaseContent\\BaseStates\\BaseMeleeAttack.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAArwBYAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T20:58:01.028Z"
+              "WhenOpened": "2025-05-09T20:58:01.028Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "CadetConfig.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\CadetMod\\CadetProject\\CadetCharacter\\Content\\CadetConfig.cs",
               "RelativeDocumentMoniker": "CadetProject\\CadetCharacter\\Content\\CadetConfig.cs",
@@ -297,7 +319,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "ThrowGun.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\CadetMod\\CadetProject\\CadetCharacter\\SkillStates\\ThrowGun.cs",
               "RelativeDocumentMoniker": "CadetProject\\CadetCharacter\\SkillStates\\ThrowGun.cs",
@@ -310,7 +332,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "ShootSmg.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\CadetMod\\CadetProject\\CadetCharacter\\SkillStates\\ShootSmg.cs",
               "RelativeDocumentMoniker": "CadetProject\\CadetCharacter\\SkillStates\\ShootSmg.cs",
@@ -318,11 +340,12 @@
               "RelativeToolTip": "CadetProject\\CadetCharacter\\SkillStates\\ShootSmg.cs",
               "ViewState": "AgIAAEcAAAAAAAAAAAAuwGEAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T20:58:01.054Z"
+              "WhenOpened": "2025-05-09T20:58:01.054Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "CadetSurvivor.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\CadetMod\\CadetProject\\CadetCharacter\\CadetSurvivor.cs",
               "RelativeDocumentMoniker": "CadetProject\\CadetCharacter\\CadetSurvivor.cs",
@@ -335,19 +358,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "CadetAssets.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\CadetMod\\CadetProject\\CadetCharacter\\Content\\CadetAssets.cs",
               "RelativeDocumentMoniker": "CadetProject\\CadetCharacter\\Content\\CadetAssets.cs",
               "ToolTip": "D:\\RoR2Mods\\CadetMod\\CadetProject\\CadetCharacter\\Content\\CadetAssets.cs",
               "RelativeToolTip": "CadetProject\\CadetCharacter\\Content\\CadetAssets.cs",
-              "ViewState": "AgIAAPUAAAAAAAAAAAAiwAcBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T20:58:01.067Z"
+              "WhenOpened": "2025-05-09T20:58:01.067Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "GrenadeLauncher.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\CadetMod\\CadetProject\\CadetCharacter\\SkillStates\\GrenadeLauncher.cs",
               "RelativeDocumentMoniker": "CadetProject\\CadetCharacter\\SkillStates\\GrenadeLauncher.cs",
@@ -355,11 +379,12 @@
               "RelativeToolTip": "CadetProject\\CadetCharacter\\SkillStates\\GrenadeLauncher.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAUwCUAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T20:58:01.021Z"
+              "WhenOpened": "2025-05-09T20:58:01.021Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "CadetCSS.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\CadetMod\\CadetProject\\CadetCharacter\\Components\\CadetCSS.cs",
               "RelativeDocumentMoniker": "CadetProject\\CadetCharacter\\Components\\CadetCSS.cs",
@@ -367,11 +392,12 @@
               "RelativeToolTip": "CadetProject\\CadetCharacter\\Components\\CadetCSS.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:15:43.002Z"
+              "WhenOpened": "2025-05-09T21:15:43.002Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "CadetMod",
               "DocumentMoniker": "D:\\RoR2Mods\\CadetMod\\CadetProject\\CadetMod.csproj",
               "RelativeDocumentMoniker": "CadetProject\\CadetMod.csproj",
@@ -383,7 +409,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "CharacterBase.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\CadetMod\\CadetProject\\Modules\\BaseContent\\Characters\\CharacterBase.cs",
               "RelativeDocumentMoniker": "CadetProject\\Modules\\BaseContent\\Characters\\CharacterBase.cs",
@@ -391,11 +417,12 @@
               "RelativeToolTip": "CadetProject\\Modules\\BaseContent\\Characters\\CharacterBase.cs",
               "ViewState": "AgIAAHgAAAAAAAAAAADgv4oAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T20:58:01.051Z"
+              "WhenOpened": "2025-05-09T20:58:01.051Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "Rolload.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\CadetMod\\CadetProject\\CadetCharacter\\SkillStates\\Rolload.cs",
               "RelativeDocumentMoniker": "CadetProject\\CadetCharacter\\SkillStates\\Rolload.cs",
@@ -403,11 +430,12 @@
               "RelativeToolTip": "CadetProject\\CadetCharacter\\SkillStates\\Rolload.cs",
               "ViewState": "AgIAAD8AAAAAAAAAAAAQwEgAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T20:58:01.016Z"
+              "WhenOpened": "2025-05-09T20:58:01.016Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "CadetPlugin.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\CadetMod\\CadetProject\\CadetPlugin.cs",
               "RelativeDocumentMoniker": "CadetProject\\CadetPlugin.cs",
@@ -415,23 +443,25 @@
               "RelativeToolTip": "CadetProject\\CadetPlugin.cs",
               "ViewState": "AgIAABwAAAAAAAAAAAASwCEAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T20:58:01.039Z"
+              "WhenOpened": "2025-05-09T20:58:01.039Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "AmmoCounter.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\CadetMod\\CadetProject\\CadetCharacter\\Components\\AmmoCounter.cs",
               "RelativeDocumentMoniker": "CadetProject\\CadetCharacter\\Components\\AmmoCounter.cs",
               "ToolTip": "D:\\RoR2Mods\\CadetMod\\CadetProject\\CadetCharacter\\Components\\AmmoCounter.cs",
               "RelativeToolTip": "CadetProject\\CadetCharacter\\Components\\AmmoCounter.cs",
-              "ViewState": "AgIAACUAAAAAAAAAACBjwC4AAABwAAAAAAAAAA==",
+              "ViewState": "AgIAACIAAAAAAAAAACBrwC4AAABwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T20:58:01.036Z"
+              "WhenOpened": "2025-05-09T20:58:01.036Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "BaseEmote.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\CadetMod\\CadetProject\\Modules\\BaseContent\\BaseStates\\BaseEmote.cs",
               "RelativeDocumentMoniker": "CadetProject\\Modules\\BaseContent\\BaseStates\\BaseEmote.cs",
@@ -439,23 +469,25 @@
               "RelativeToolTip": "CadetProject\\Modules\\BaseContent\\BaseStates\\BaseEmote.cs",
               "ViewState": "AgIAACwAAAAAAAAAAAAiwEIAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T20:58:01.032Z"
+              "WhenOpened": "2025-05-09T20:58:01.032Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "Config.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\CadetMod\\CadetProject\\Modules\\Config.cs",
               "RelativeDocumentMoniker": "CadetProject\\Modules\\Config.cs",
               "ToolTip": "D:\\RoR2Mods\\CadetMod\\CadetProject\\Modules\\Config.cs",
               "RelativeToolTip": "CadetProject\\Modules\\Config.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAMBcwE8AAABAAAAAAAAAAA==",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAqwE8AAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T20:58:01.048Z"
+              "WhenOpened": "2025-05-09T20:58:01.048Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "SlideLoad.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\CadetMod\\CadetProject\\CadetCharacter\\SkillStates\\SlideLoad.cs",
               "RelativeDocumentMoniker": "CadetProject\\CadetCharacter\\SkillStates\\SlideLoad.cs",
@@ -463,11 +495,12 @@
               "RelativeToolTip": "CadetProject\\CadetCharacter\\SkillStates\\SlideLoad.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T20:58:01.061Z"
+              "WhenOpened": "2025-05-09T20:58:01.061Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "CharacterAssets.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\CadetMod\\CadetProject\\Modules\\CharacterAssets.cs",
               "RelativeDocumentMoniker": "CadetProject\\Modules\\CharacterAssets.cs",
@@ -475,11 +508,12 @@
               "RelativeToolTip": "CadetProject\\Modules\\CharacterAssets.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAiwBoAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T20:58:01.065Z"
+              "WhenOpened": "2025-05-09T20:58:01.065Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "CadetBuffs.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\CadetMod\\CadetProject\\CadetCharacter\\Content\\CadetBuffs.cs",
               "RelativeDocumentMoniker": "CadetProject\\CadetCharacter\\Content\\CadetBuffs.cs",
@@ -487,7 +521,8 @@
               "RelativeToolTip": "CadetProject\\CadetCharacter\\Content\\CadetBuffs.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T20:58:01.071Z"
+              "WhenOpened": "2025-05-09T20:58:01.071Z",
+              "EditorCaption": ""
             }
           ]
         }

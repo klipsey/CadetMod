@@ -1,3 +1,7 @@
+# 1.1.9
+
+- Fine.
+
 # 1.1.8
 
 - Fixed for Sots v3

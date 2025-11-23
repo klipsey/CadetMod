@@ -29,14 +29,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="RoR2BepInExPack" Version="*" />
+		<PackageReference Include="RoR2BepInExPack" Version="1.36.0" />
 		<PackageReference Include="BepInEx.Analyzers" Version="*">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 
 		<PackageReference Include="BepInEx.Core" Version="5.*" />
-		<PackageReference Include="RiskOfRain2.GameLibs" Version="*-*" />
+		<PackageReference Include="RiskOfRain2.GameLibs" Version="1.4.0-r.0" />
 		<PackageReference Include="MMHOOK.RoR2" Version="*" />
 		<PackageReference Include="R2API.Core" Version="*" />
 		<PackageReference Include="R2API.Prefab" Version="*" />
